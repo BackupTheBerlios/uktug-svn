@@ -12,6 +12,11 @@
 \usepackage{booktabs}   % For tables with TOPRULE, MIDRULE and BOTTOMRULE
 
 % -----------------------------------------------------------------------------------
+% Baskerville Definitons
+\newcommand{\ISSUEDATE}{April 2009}
+
+
+% -----------------------------------------------------------------------------------
 % Definitions for the Constitution
 \newcounter{refa}
 \newcounter{refb}
@@ -43,7 +48,7 @@
 \renewcommand{\tabcolsep}{0.2cm}
 \begin{tabular}{l c r}
 \textbf{The Annals of the UK \TeX \ Users Group} &  \href{http://uk.tug.org/}{http://uk.tug.org/} & textbf{Vol. 10 No. 1} \\
-\textbf{ISSN 1354-5930}                          & \textbf{Editor: Jonathan Webley} & \textbf{January 2009}
+\textbf{ISSN 1354-5930}                          & \textbf{Editor: Jonathan Webley} & \textbf{\ISSUEDATE}
 \end{tabular}}
 \rule{15.5cm}{1pt}
 \end{small}
@@ -75,7 +80,7 @@
 % \includegraphics{Baskerville_dia.png} \\
 \href{http://uk.tug.org/}{http://uk.tug.org/} \\ \textbf{Editor: Jonathan Webley}}
 \fancyhead[L]{The Annals of the UK \TeX \ Users Group \\ \textbf{ISSN 1354-5930} }
-\fancyhead[R]{\textbf{Vol. 10 No. 1} \\ \textbf{January 2009}}
+\fancyhead[R]{\textbf{Vol. 10 No. 1} \\ \textbf{\ISSUEDATE}}
 \fancyfoot[C]{-\thepage-} % except the center
 \setlength\headheight{70pt}
 \renewcommand{\headrulewidth}{1pt}
@@ -116,7 +121,7 @@ The UK-TUG Committee for 2009 is made up of:
     \item Jonathan Underwood
     \item Charles Goldie
     \item Simon Dales
-    \item Jonathan Webley (co-opted)
+    \item Jonathan Webley (Baskerville Editor, co-opted)
 \end{itemize}
 The entire committee can be contacted at \href{mailto:uktug-committee@uk.tug.org}{uktug-committee@uk.tug.org}.
 
@@ -1103,25 +1108,5 @@ The Committee shall keep minutes of all:
   or bye-law shall be inconsistent with, or shall affect or repeal anything
   contained in, this constitution.
 \end{enumerate}
-
-
-% ----------------------------------------------------------------------------------------
-\clearpage
-
-% \renewcommand{\theequation}{A-\arabic{equation}}
-% redefine the command that creates the equation no.
-% \setcounter{equation}{0}  % reset counter 
-\section{Membership List}  % use *-form to suppress numbering
-
-\begin{tabular}{ l l l }
-\textbf{Name} & \textbf{Email address} \\
-\textbf{Town} &  \\
-Flintstone, F. & \small fred.flintstone@hotmail.com \\
-Bedrock & \\[2ex]
-Mouse, M. & \small m.mouse@disney.com \\
-Los Angeles & \\[2ex]
-Oyl, O. & \small olive.oyl@aol.com \\
-Cape Cod \\[2ex]
-\end{tabular}
 
 \end{document}
