@@ -1,4 +1,4 @@
-\documentclass[a4paper,twocolumn]{article}
+\documentclass[a5paper,twoside]{article}
 
 \usepackage{hyperref}           % For hyperlinks
 \usepackage[ansinew]{inputenc}  % For "£"
@@ -11,10 +11,13 @@
 \usepackage{cyrillic}   % For the cyrillic letter used for the Serbian dinar
 \usepackage{booktabs}   % For tables with TOPRULE, MIDRULE and BOTTOMRULE
 
+
 % -----------------------------------------------------------------------------------
 % Baskerville Definitons
+\newcommand{\BK}{\textit{Baskerville}}
 \newcommand{\ISSUEDATE}{April 2009}
 
+\hyphenation{Bas-ker-ville}
 
 % -----------------------------------------------------------------------------------
 % Definitions for the Constitution
@@ -24,120 +27,105 @@
 \newcommand{\MF}{{\manual META}\-{\manual FONT}}
 % -----------------------------------------------------------------------------------
 
-\setlength{\columnseprule}{1pt}
-
-% Use with title
-% \headheight 20pt
-
-% Use with fancyhead
-\headheight 100pt
-\headsep    10pt
-\textheight 540pt
-
-% -----------------------------------------------------------------------------------
-% The TITLE is not currently used.
-\date{}
-\author{}
-\title{
-\begin{center}
-\includegraphics[width=18cm,trim=50 390 5 210]{Baskerville.png}
-% \includegraphics[width=15cm,viewport=90 400 610 500,trim=5 5 5 5]{Baskerville.png}
-\end{center}
-\begin{small}
-{\renewcommand{\arraystretch}{1.5}
-\renewcommand{\tabcolsep}{0.2cm}
-\begin{tabular}{l c r}
-\textbf{The Annals of the UK \TeX \ Users' Group} &  \href{http://uk.tug.org/}{http://uk.tug.org/} & textbf{Vol. 10 No. 1} \\
-\textbf{ISSN 1354-5930}                          & \textbf{Editor: Jonathan Webley} & \textbf{\ISSUEDATE}
-\end{tabular}}
-\rule{15.5cm}{1pt}
-\end{small}
-}
+\voffset    -2cm
+\textheight 16cm
 
 % -----------------------------------------------------------------------------------
 % Heading for pages after the first page.
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{\textit{Baskerville}}
-\rhead{\textit{Volume 10, Number 1}}
+
+% One heading per page, to the margin
+\fancyhead[RE]{}
+\fancyhead[LE]{\textit{Baskerville}}          % Recto / Odd
+\fancyhead[RO]{\textit{Volume 10, Number 1}}  % Verso / Even
+\fancyhead[LO]{}
+
+% \lhead{\textit{Baskerville}}
+% \rhead{\textit{Volume 10, Number 1}}
+
 \cfoot{-\thepage-}
 % -----------------------------------------------------------------------------------
 
 % ============================================================================================
 \begin{document}
 
-% \maketitle
+% -----------------------------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+
+\vspace{2cm}
+
+\includegraphics[width=0.95\textwidth]{lion.png} \\ [2cm]
+
+\textsc{\large The Annals of the UK-\TeX Users' Group} \\[0.2cm]
+(\href{http://uk.tug.org/}{http://uk.tug.org/}) \\[0.2cm]
+{\large ISSN 1354-5930}
+ 
+\vfill
+
+% Bottom of the page
+\begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}} l c r }
+           & Edited by                 &             \\
+Vol. 10.1  & Jonathan \textsc{Webley}  & \ISSUEDATE  \\
+\end{tabular*}
+\end{center}
+\end{titlepage}
 
 % -----------------------------------------------------------------------------------
-% Redefine PLAIN style for use on the first page only.
-\fancypagestyle{plain}{
-\fancyhf{} % clear all header and footer fields
-% Works except for graphics of heading
-\fancyhead[C]{
-% trim=l b r t  	This option will crop the imported image by l from the left, b from the
-% bottom, r from the right, and t  from the top. Where l, b, r and t are lengths. 
-\includegraphics[width=16cm,trim=10 0 5 190]{Baskerville_dia.png} \\
-% \includegraphics{Baskerville_dia.png} \\
-\href{http://uk.tug.org/}{http://uk.tug.org/} \\ \textbf{Editor: Jonathan Webley}}
-\fancyhead[L]{The Annals of the UK \TeX \ Users' Group \\ \textbf{ISSN 1354-5930} }
-\fancyhead[R]{\textbf{Vol. 10 No. 1} \\ \textbf{\ISSUEDATE}}
-\fancyfoot[C]{-\thepage-} % except the center
-\setlength\headheight{70pt}
-\renewcommand{\headrulewidth}{1pt}
-\renewcommand{\footrulewidth}{0pt}
-}
-\thispagestyle{plain}
-% -----------------------------------------------------------------------------------
-
-\setcounter{tocdepth}{1}  % Sections only
+\setcounter{tocdepth}{2}  % Sections only
 \tableofcontents
 
-% First page has large heading
-\addtolength\headheight{-80pt}
-\addtolength\headsep{10pt}
-\addtolength\textheight{110pt}
+% -----------------------------------------------------------------------------------
+\vspace{0.5cm}
+\noindent All contributions should be sent to \href{mailto:baskerville@uk.tug.org}{baskerville@uk.tug.org}. Articles on any area of \TeX, its friends, UK-TUG or related topics are very welcome: the Committee is particularly keen to publish articles with a UK \textit{flavour}. Send in your comments on this issue; your suggestions, letters, thoughts, tips and hints, articles, jokes, questions, requests for help, jobs – anything relevant will be considered for publication.
+
+% The deadline for the next issue is [\textbf{DATE}]. 
+
+% ----------------------------------------------------------------------------------------
+\vspace{0.5cm}
+\noindent \textbf{UK-TUG Committee 2009}
+
+\begin{itemize}
+   \setlength{\parskip}{0pt} % Scrunch up to fit on page
+   \item Jonathan Fine (Chair)
+   \item David Crossland (Secretary and Webmaster)
+   \item David Saunders (Treasurer)
+   \item Joseph Wright (Membership Secretary)
+   \item John Trapp (Training Officer)
+   \item Jonathan Underwood
+   \item Charles Goldie
+   \item Simon Dales
+   \item Jonathan Webley (Baskerville Editor, co-opted)
+\end{itemize}
+The  committee can be contacted at
+\href{mailto:uktug-committee@uk.tug.org}{uktug-committee@uk.tug.org}.
 
 % ----------------------------------------------------------------------------------------
 \section{Editorial}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Welcome to the revived \BK. \BK\ was for many years the journal of UK-TUG and archived copies are available through our web-site. The UK-TUG committee have decided to start anew publication of \BK\ and I have been co-opted onto the committee as editor. This is the first new issue. Since the purpose of \TeX\ is to produce ``marks on paper'' \BK\ has been printed and posted out; though all issues will also be available on the web.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+The journal is named after a serif typeface designed in 1757 by John Baskerville. Previous issues of \BK\ used the Baskerville font but this issue uses the default \textit{Computer Modern} font.
 
-\vspace{2ex}
+This particular issue is somewhat light in content. The quality of future issues will depend on \textit{you}, the membership of UK-TUG. I do not intent to create all the content myself, and welcome contributions on matters relevant to \TeX\ or UK-TUG.
 
-The deadline for the next issue is [\textbf{DATE}]. Send me - \href{mailto:jonathan.webley@uwclub.net}{jonathan.webley@uwclub.net} - your comments on this issue; letters, your thoughts, tips and hints, articles, jokes, questions – anything relevant to \TeX \ or UK-TUG.
+I think that a newsletter is central to the well-being of a user group such as ours, and I look forwards to hearing your comments on this issue.
 
-If you wish to receive this issue or future issues of \textit{Baskerville} on paper, contact [\textbf{name/position}].
-
-% ----------------------------------------------------------------------------------------
-\section{UK-TUG Committee 2009}
-The UK-TUG Committee for 2009 is made up of:
-\begin{itemize}
-    \item Jonathan Fine (Chair)
-    \item David Crossland (Secretary and Webmaster)
-    \item David Saunders (Treasurer)
-    \item Joseph Wright (Membership Secretary)
-    \item John Trapp (Training Officer)
-    \item Jonathan Underwood
-    \item Charles Goldie
-    \item Simon Dales
-    \item Jonathan Webley (Baskerville Editor, co-opted)
-\end{itemize}
-The entire committee can be contacted at \href{mailto:uktug-committee@uk.tug.org}{uktug-committee@uk.tug.org}.
+\hfill Jonathan Webley
 
 % ----------------------------------------------------------------------------------------
 \section{Events}
-\subsection{EuroTex 2009}
-EuroTeX 2009 takes place this year in the Hague, the Netherlands, on August 31 through September 4, and the conference will focus on educational uses of \TeX, such as manuals, presentations and teaching materials. The conference will be in English.
+\subsection{Euro\TeX\ 2009}
+Euro\TeX\ 2009 takes place this year in the Hague, the Netherlands, on 31 August through 4 September 2009, and the conference will focus on educational uses of \TeX, such as manuals, presentations and teaching materials. The conference will be in English.
 
-The fee for UK-TUG members is \euro350, which includes everything except the excursion day (which costs \euro75). In particular it includes accommodation and meals. If you book and pay before February 1st there is a \euro100 discount.
+The fee for UK-TUG members is \euro350, which includes everything except the excursion day (which costs \euro75). In particular it includes accommodation and meals.
 
 The official website is \href{http://www.ntg.nl/EuroTeX2009/index.html}{www.ntg.nl/EuroTeX2009}.
 
 \subsection{Bacho\TeX\ 2009}
 Bacho\TeX\ 2009 is the XVIIth Polish \TeX\ Users Group Conference.
 
-As usual it will be held at the traditional TeXies' and GUST meeting place, Bachotek near Brodnica, in the north-east of Poland, from April 29 until May 3, 2009 inclusive.
+As usual it will be held at the traditional \TeX ies' and GUST meeting place, Bachotek near Brodnica, in the north-east of Poland, from 29 April until 3 May 2009 inclusive.
 
 The conference aims to get a glimpse of the future, and the title is:
 \begin{center} ``\textit{\TeX: at a turning point, or at the crossroads?}'' \end{center}
@@ -155,18 +143,21 @@ Work progresses in many different directions, and thus there is clearly hope for
 
 In this context the feedback between users and developers of new tools and engines is immensely important -- it might decide whether within a few years we will be looking back at today as a successful turning point or as a bad decision at the crossroads of \TeX's history.
 
-Some say that they have never believed that conference themes/mottos have any impact on submissions anyway. The organisers of Bacho\TeX\ think otherwise. There is no restriction on the content of presentations but those that are user-centric and oriented towards the future of \TeX\ with special emphasis on the needs, hopes and dangers are preferred.
+Conference themes or mottos often have little impact on submissions.
+% Some say that they have never believed that conference themes or mottos have any impact on submissions anyway. 
+The organisers of Bacho\TeX\ think otherwise. There is no restriction on the content of presentations but those that are user-centric and oriented towards the future of \TeX\ with special emphasis on the needs, hopes and dangers are preferred.
 
 Proposals (abstracts) should be e-mailed to the Program Committee: \href{mailto:papers-2009@gust.org.pl}{papers-2009@gust.org.pl}. Bogus\l{}aw Jackowski has been appointmed chairman.
 
 Especially welcome are proposals for \TeX-related tutorials or introductions. Contact the organisers if you have suggestions for tutorials or workshops by others than yourself or about specific topics.
 
-The deadline for abstracts and other proposals is March 8th. The deadline for final papers will soon be published at the conference web site: \href{http://www.gust.org.pl/bachotex/2009/main-en.html?set_language=en}{www.gust.org.pl/BachoTeX/2009}
+The deadline for abstracts and other proposals is 8 March. The deadline for final papers will soon be published at the conference web site: \href{http://www.gust.org.pl/bachotex/2009/main-en.html?set_language=en}{www.gust.org.pl/BachoTeX/2009}
 
-Exhausted TeXies will get a chance to recover their intellectual powers during nightly musical sessions, usually at a bonfire. Participate by bringing your own instruments (and voices)! Nature fans will have the opportunity to enjoy the unspoiled features of the Bachotek lake and surrounding woods. The conference could also be a family event -- the conference site is an enclosed area with a safe and attractive playing ground for children and parents alike.
+Exhausted \TeX ies will get a chance to recover their intellectual powers during nightly musical sessions, usually at a bonfire. Participate by bringing your own instruments (and voices)! Nature fans will have the opportunity to enjoy the unspoiled features of the Bachotek lake and surrounding woods. The conference could also be a family event -- the conference site is an enclosed area with a safe and attractive playing ground for children and parents alike.
 
-\noindent \textbf{Call for TeX Pearls} \\
-The organisers are seeking to continue the tradition of ``The Pearls of TeX Programming''.
+\vspace{2em}
+\noindent \textbf{Call for \TeX\ Pearls} \\
+The organisers are seeking to continue the tradition of ``The Pearls of \TeX\ Programming''.
 Here, briefly, is what is wanted:
 \begin{itemize}
 \item short \TeX, MF or MP macro(s)
@@ -177,10 +168,34 @@ Here, briefly, is what is wanted:
 If you have something that fits the bill, please consider submitting a proposal. If you know of somebody's work that does the same, please let us know, and we will contact that person.  Other details and previously collected Pearls can be found at 
 \href{http://www.gust.org.pl/projects/pearls/}{www.gust.org.pl/projects/pearls}
 
+\newpage
+\subsection{TUG 2009}
+TUG 2009 will take place in Notre Dame, Indiana, from 28-31 July. See 
+\href{http://tug.org/tug2009}{http://tug.org/tug2009}
+for the registration form, maps, the proposals already accepted, and more.
+
+April has several deadlines related to the conference:
+
+\begin{itemize}
+	\item 13 April 2009: This is the deadline for abstract submissions; see
+  \href{http://tug.org/tug2009/cfp.html}{http://tug.org/tug2009/cfp.html} for the call for papers.
+  
+  Although proposals may be accepted after the deadline, of
+  course potential attendees would like to know what they'll be seeing.
+  So if you'd like to give a talk, please try to submit an abstract by
+  the 13th.
+  
+  \item 17 April 2009: This is the deadline for bursary applications; see
+  \href{http://tug.org/bursary}{http://tug.org/bursary} for information and the application form.  No late applications will be accepted.
+  
+  \item April 27: This is the deadline for the early bird registration discount. After this date, the registration fee will be increased. Register for the conference through Notre Dame's web-site via this link \href{http://tug.org/tug2009/register.html}{http://tug.org/tug2009/register.html}
+\end{itemize}
+
+
 % ----------------------------------------------------------------------------------------
-%\newpage
+\newpage
 \section{The Hound}
-This is a somewhat easy cryptic crossword and the answers can be found later in this issue. \\
+This is a somewhat easy, cryptic crossword and the solution can be found later in this issue. \\
 
 \begin{Puzzle}{9}{9}
 |[1]C |A |[2]S |E |* |[3]A |[4]W |L |[5]S |.
@@ -194,45 +209,43 @@ This is a somewhat easy cryptic crossword and the answers can be found later in 
 |[13]S |L |E |D |* |[14]M |E |M |E |.
 \end{Puzzle}
 
-\noindent \textbf{Across} \\[2ex]
-\begin{tabular}{r l}
- \textbf{1} & In Africa, see a container. (4)\\
- \textbf{3} & These tools are a product of bad laws. (4)\\
- \textbf{6} & Misuse this girl. (3)\\
- \textbf{7} & These weeds for veg. (5)\\
- \textbf{8} & On this ship, the wicked queen mates. (7)\\
- \textbf{11} & Pawnbroker is unclean, almost. (5)\\
- \textbf{12} & Mineral found in store? (3)\\
- \textbf{13} & Poor deals are without a toboggan. (4)\\
- \textbf{14} & Idea came from me, twice. (4)\\
-\end{tabular}
-
-\vspace{2ex}
-
-\noindent \textbf{Down} \\[2ex]
-\begin{tabular}{r l}
- \textbf{1}  & In the discus, perhaps, achieve one's \\
-             & peak. (4) \\
- \textbf{2}  & It's a sight, the centilitres in awful cat's \\
-             & pee. (9)\\    
- \textbf{4}  & Beg and owe with one, sadly together we \\
-             & looked dismal. (9) \\
- \textbf{5}  & Kent's editor knows the issue. (4)\\
- \textbf{7}  & Hades loses a ghost. (5)\\
- \textbf{9}  & These insects cause errors. (4)\\
- \textbf{10} & Sounds like I hear when present. (4)\\
-\end{tabular}
+\noindent
+\begin{tabular*}{\textwidth}{r p{3.69cm} c r p{3.69cm} }
+ \multicolumn{2}{l}{\textbf{Across}}    & & \multicolumn{2}{l}{\textbf{Down}} \\
+ \textbf{1}  & In Africa, see a         & & \textbf{1}  & In the discus, perhaps, \\
+             & container. (4)           & &             & achieve one's peak. (4) \\
+ \textbf{3}  & These tools are a        & & \textbf{2}  & It's a sight, the\\
+             & product of bad laws. (4) & &             & centilitres in awful  \\
+ \textbf{6}  & Misuse this girl. (3)    & &             & cat's pee. (9) \\
+ \textbf{7}  & These weeds for veg. (5) & & \textbf{4}  & Beg and owe with one, \\
+ \textbf{8}  & On this ship, the wicked & &             & sadly together we  \\
+             & queen mates. (7)         & &             & looked dismal. (9) \\
+ \textbf{11} & Pawnbroker is mostly     & & \textbf{5}  & Kent's editor knows  \\
+             & unclean. (5)             & &             & the issue. (4) \\
+ \textbf{12} & Mineral found in         & & \textbf{7}  & Hades loses a ghost. (5) \\
+             & store? (3)               & & \textbf{9}  & These insects cause \\
+ \textbf{13} & Poor deals are without   & &             & errors. (4) \\
+             & a toboggan. (4)          & & \textbf{10} & Sounds like I hear when \\
+ \textbf{14} & Idea came from me,       & &             & present. (4) \\
+             & twice. (4) \\
+\end{tabular*}
 
 % ----------------------------------------------------------------------------------------
-\section{\LaTeX\ Hints \& Tips}
-\textbf{Currency Symbols} \\
+% \section{\LaTeX\ Hints \& Tips}
+% \textbf{Currency Symbols} \\
+
+\section{Currency Symbols in \LaTeX}
 Standard keyboards contain the dollar sign (\$), which, of course, is a special symbol in \TeX, so needs to be prefaced with a backslash or oblique: \textbackslash \$. This symbol works properly in both text mode and math mode.
 
-Keyboards also have a pound sign (£), the use of which requires the package \texttt{inputenc}. Again there is a standard command \textbackslash \texttt{pounds}, which renders as \pounds. This symbol works properly in both text mode and math mode.
+Keyboards also have a pound sign (£), the use of which requires the package \texttt{inputenc}. Additionally, there is a standard command \textbackslash \texttt{pounds}, which renders as \pounds. This symbol works properly in both text mode and math mode.
 
-Additionally, standard \LaTeX\ contains two commands for these signs: \\
-\indent \textbackslash \texttt{textdollar} which renders as \textdollar, and \\
-\indent \textbackslash \texttt{textsterling} which renders as \textsterling.
+Additionally, standard \LaTeX\ contains two commands for these signs:
+
+\textbackslash \texttt{textdollar} which renders as \textdollar, and
+
+\textbackslash \texttt{textsterling} which renders as \textsterling.
+
+\medskip
 
 The euro has its own package, \texttt{eurosym}, which contains these commands:
 \begin{center}
@@ -247,7 +260,7 @@ The euro has its own package, \texttt{eurosym}, which contains these commands:
 \bottomrule
 \end{tabular}
 \end{center}
-All of these symbols are generated using the ``C'' character of the current body font. The package also contains the command \textbackslash \texttt{euro} which maps to \textbackslash \texttt{officialeuro} but can altered using a package option.
+All of these symbols are generated using the ``C'' character of the current body font. The package also contains the command \textbackslash \texttt{euro} which maps to \textbackslash \texttt{officialeuro} but can be altered using a package option.
 
 % --------------------------------------------------------
 % Change footnote marker to symbols instead of numbers.
@@ -258,8 +271,11 @@ The \texttt{textcomp} package includes these symbols:
 
 \medskip
 
+% I'm not using "xtab" since each currency requires 2 rows and a rule so I found it easier
+% just to control the page breaks manually.
+
 \begin{center}
-\begin{tabular}{l l l }
+\begin{tabular}{p{2.5cm} p{6cm}}
 \toprule
 \textbf{Symbol} & \textbf{\LaTeX}  \\
 \textbf{Name}   & \textbf{Used in} \\
@@ -272,16 +288,24 @@ cent & US, Canada \\
 \midrule
 \textcentoldstyle & \textbackslash \texttt{textcentoldstyle} \\
 cent, old style & \\
+\bottomrule
+\end{tabular}
+
+\vfill
+\newpage
+
+\begin{tabular}{p{2.5cm} p{6cm}}
+\toprule
+\textbf{Symbol} & \textbf{\LaTeX}  \\
+\textbf{Name}   & \textbf{Used in} \\
 \midrule
 \textcolonmonetary & \textbackslash \texttt{textcolonmonetary} \\
-col\'on  & Costa Rica (CRC), \\
-         & El Salvador (SVC), \\
+col\'on  & Costa Rica (CRC), El Salvador (SVC), \\
 cedi     & Ghana (GHS) \\
 \midrule
 \textcurrency & \textbackslash \texttt{textcurrency} \\
-         & Generic currency sign, used \\
-         & when no other sign is \\
-         & available. \\
+         & Generic currency sign, used when no \\
+         & other sign is available. \\
 \midrule
 \textdollaroldstyle & \textbackslash \texttt{textdollaroldstyle} \\
 escudo\footnotemark[1] & formerly Portugal (PTE), \\
@@ -293,22 +317,6 @@ dong & Vietnam (VND) \\
 \texteuro & \textbackslash \texttt{texteuro} \\
 euro & Eurozone (EUR) \\
 \midrule
-
-% -----------------------------------------------
-% Page break
-\end{tabular}
-
-\vfill
-
-\footnotetext[1]{This version of the dollar sign with two vertical lines is called the cifrão. Amounts are generally written so that it serves as the decimal separator, such as 20\textdollaroldstyle00 for 20 escudos.}
-
-\begin{tabular}{l l l }
-\toprule
-\textbf{Symbol} & \textbf{\LaTeX}  \\
-\textbf{Name}   & \textbf{Used in} \\
-\midrule
-% -----------------------------------------------
-
 \textflorin & \textbackslash \texttt{textflorin} \\
 florin & Aruba (AWG), \\
        & Netherlands Antilles (ANG) \\
@@ -328,6 +336,17 @@ peso & Philippines (PHP) \\
 \textwon & \textbackslash \texttt{textwon} \\
 won & South Korea (KRW), \\
     & North Korea (KPW) \\
+\bottomrule
+\end{tabular}
+
+\vfill
+
+\footnotetext[1]{This version of the dollar sign with two vertical lines is called the cifrão. Amounts are generally written so that it serves as the decimal separator, such as 20\textdollaroldstyle00 for 20 escudos.}
+
+\begin{tabular}{p{2.5cm} p{6cm}}
+\toprule
+\textbf{Symbol} & \textbf{\LaTeX}  \\
+\textbf{Name}   & \textbf{Used in} \\
 \midrule
 \textyen & \textbackslash \texttt{textyen} \\
 yen, yuan  & Japan (JPY), China (CNY) \\
@@ -351,762 +370,56 @@ And then there is the \texttt{marvosym} package which has these symbols:
 \textbf{Symbol} & \textbf{\LaTeX}  \\
                 & \textbf{Use} \\
 \midrule
-\Denarius & \textbackslash \texttt{Denarius}\footnotemark[2] \\
-% \hline
-\EUR & \textbackslash \texttt{EUR} \\
-% \hline
-\EURcr & \textbackslash \texttt{EURcr} \\
-       & Euro compatible with \textit{Courier}. \\
-% \hline
-\EURdig & \textbackslash \texttt{EURdig} \\
-       & Euro compatible with \texttt{marvosym} \\
-       & digits. \\
-
-% ---------------------------------------------------------
-% Pagebreak
-%\end{tabular}       
-%\begin{tabular}{ l l l }
-%\toprule
-%\textbf{Symbol} & \textbf{\LaTeX}  \\
-%                & \textbf{Use} \\
-%\midrule
-% ---------------------------------------------------------
-
-\EURhv & \textbackslash \texttt{EURhv} \\
-       & Euro compatible with \textit{Helvetica}. \\
-% \hline
-\EURtm & \textbackslash \texttt{EURtm} \\
-       & Euro compatible with \textit{Times} \\
-       & \textit{Roman}. \\
-% \hline
+\Denarius   & \textbackslash \texttt{Denarius}\footnotemark[2] \\
+            & Obsolete symbol for the German pfennig \\
+\EUR        & \textbackslash \texttt{EUR} \\
+\EURcr      & \textbackslash \texttt{EURcr} \\
+            & Euro compatible with \textit{Courier}. \\
+\EURdig     & \textbackslash \texttt{EURdig} \\
+            & Euro compatible with \texttt{marvosym} digits. \\
+\EURhv      & \textbackslash \texttt{EURhv} \\
+            & Euro compatible with \textit{Helvetica}. \\
+\EURtm      & \textbackslash \texttt{EURtm} \\
+            & Euro compatible with \textit{Times} \textit{Roman}. \\
 \EyesDollar & \textbackslash \texttt{EyesDollar} \\
-% \hline
-\Shilling & \textbackslash \texttt{Shilling}\footnotemark[3] \\
+\Shilling   & \textbackslash \texttt{Shilling}\footnotemark[3] \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\footnotetext[2]{The denarius was a Roman coin. The dinar is a descendant of the denarius and is used, or was formerly used, by several countries. However, I couldn't discover any country using this symbol. Serbia, for example, use the cyrillic De (\textcyrrm{D}) letter for the dinar.}
+In conclusion, \LaTeX\ caters for all common, and some not so common, currency symbols. Unicode, however, has a few additional ones, and is far better documented.
+
+\hfill Jonathan Webley
+
+\vfill
+
+\footnotetext[2]{The denarius was a Roman coin. The dinar is a descendant of the denarius and is used, or was formerly used, by several countries. However, Serbia, for example, use the cyrillic De (\textcyrrm{D}) letter for the dinar.}
 \footnotetext[3]{This symbol resembles a beta ($\beta$) but I belive it to be more akin to the German Eszett (\ss). It is possibly a symbol for the schilling, the pre-euro currency of Austria.}
 
 % ----------------------------------------------------------------------------------------
-\section{Crossword Answers}
+\section{The Hound Answers}
 \noindent \textbf{Across} \\
+\begin{turn}{180} 
+ 7. swede,
+ 8. steamer,
+11. uncle,
+12. ore,
+13. sled,
+14. meme
+\end{turn} \\
 \begin{turn}{180}
- 8  steamer,
- 11  uncle,
- 12  ore,
- 13  sled, 
- 14  meme
-\end{turn}
-\begin{turn}{180}
-1  case,
- 3  awls, 
- 6  Sue,
- 7  swede,
+ 1. case,
+ 3. awls,
+ 6. Sue,
 \end{turn} \\
 
 \noindent \textbf{Down} \\
 \begin{turn}{180}
-4 woebegone,
-5 seed, 7 shade, 9 bugs, 10 here
-\end{turn}
+4. woebegone,
+5. seed, 7. shade, 9. bugs, 10. here
+\end{turn} \\
 \begin{turn}{180}
-1 cusp, 2 spectacle,
+1. cusp, 2. spectacle, 
 \end{turn}
-
-% ----------------------------------------------------------------------------------------
-\newpage
-\appendix
-
-\section{UK-TUG Constitution}
-Approved by ballot on 22nd November 2008 and adopted on 30th November 2008.
-
-\section*{PART 1}
-
-\subsection{Adoption of the Constitution}
-
-The association and its property will be administered and managed in accordance
-with the provisions in Parts 1 and 2 of this constitution.
-
-\subsection{The Name}
-
-The association's name is the UK \TeX\ Users’ Group (and in this document it
-is called UK-TUG).
-
-\subsection{The Objects}
-
-UK-TUG's objects (the Objects) are:
-\begin{enumerate}
-\item the identification, development, operation, funding, support, promotion
-  and encouragement of:
-  \begin{enumerate}
-  \item programmes and projects concerning systems for typesetting, typographic
-   design and font development, and
-  \item seminars and conferences which will stimulate those who have an 
-   interest in such systems,
-  \end{enumerate}
-  provided that these are of a charitable educational and scientific nature;
-\item the establishment of channels to ease the exchange of material relevant to
-  the typesetting software \TeX\ and the font description language \MF;
-\item the promotion of \TeX, \MF\ and related software, standards and systems
-  which are interoperable with them with the goal of enabling and supporting the
-  creation of the finest typeset material;
-\item the development and support of a UK community of users and developers of
-  the aforementioned;
-\end{enumerate}
-
-\subsection{Application of the Income and Property}
-\label{IncomeAndProperty}
-
-\begin{enumerate}
-\item The income and property of UK-TUG shall be applied solely towards the
-  promotion of the Objects.
-\item A Committee member may pay out of, or be reimbursed from, the
-  property of the UK-TUG reasonable expenses properly incurred by him or her
-  when acting on behalf of UK-TUG.
-\item 
-\begin{enumerate}
-\item a member who is not also a Committee member may receive reasonable and
-  proper remuneration for any goods or services supplied to UK-TUG;
-\item a Committee member may:
-\begin{enumerate}
-\item buy goods or services from UK-TUG upon the same terms as other members
-  or members of the public;
-\item receive a benefit from UK-TUG as a member, and upon the same terms as
-  other members;
-\item receive a benefit from UK-TUG in the capacity of a beneficiary of
-  UK-TUG, provided that the Committee member complies with the provisions of 
-  sub-clause~\ref{ConflictOfInterest} of this clause;
-\end{enumerate}
-\item UK-TUG may purchase indemnity insurance for the Committee members against
-  any liability that by virtue of any rule of law would otherwise attach to a
-  Committee member or other Officer in respect of any negligence, default, breach
-  of duty or breach of trust of which he or she may be guilty in relation to
-  UK-TUG but excluding:
-\begin{enumerate}
-\item fines;
-\item costs of unsuccessfully defending criminal prosecutions for offences
-  arising out of the fraud, dishonesty or wilful or reckless misconduct of the
-  Committee member or other Officer;
-\item liabilities to UK-TUG that result from conduct that the Committee member
-  or other Officer knew or ought to have known was not in the best interests of
-  UK-TUG or in respect of which the person concerned did not care whether that
-  conduct was in the best interests of UK-TUG or not.
-\end{enumerate}
-\end{enumerate}
-\item No Committee member may be paid or receive any other benefit for being a
-  Committee member.
-\item \label{ConflictOfInterest} A Committee member must absent himself or herself from any discussions of
-  the Committee or of any subcommittee in which it is possible that a conflict will arise between his
-  or her duty to act solely in the interests of UK-TUG and any personal interest
-  (including but not limited to any personal financial interest) and take no
-  part in the voting upon the matter.
-\item In this clause~\ref{IncomeAndProperty}, ``Committee member'' shall include any person firm or
-  company connected with the Committee member.
-\end{enumerate}
-
-\subsection{Dissolution}
-
-\begin{enumerate}
-\item If the members resolve to dissolve UK-TUG the Committee members will
-  remain in office as the UK-TUG Committee and be responsible for winding up the
-  affairs of UK-TUG in accordance with this clause.
-\item The Committee must collect in all the assets of UK-TUG and must pay or
-  make provision for all the liabilities of UK-TUG.
-\item \label{Remainder} The Committee must apply any remaining property or money:
-\begin{enumerate}
-\item directly for the Objects;
-\item by transfer to any organisations for purposes the same as or
-  similar to UK-TUG.
-\end{enumerate}
-\item The members may pass a resolution before or at the same time as the
-  resolution to dissolve UK-TUG specifying the manner in which the Committee are
-  to apply the remaining property or assets of UK-TUG and the Committee must
-  comply with the resolution if it is consistent with sub-clause~\ref{Remainder} of this clause.
-\end{enumerate}
-
-\subsection{Amendments}
-
-\begin{enumerate}
-\item \label{Part1amend}Any provision contained in Part 1 of this constitution may be amended
-  provided that:
-\begin{enumerate}
-\item no amendment may be made to alter the Objects if the change would not be
-  within the reasonable contemplation of the members of UK-TUG;
-\item any resolution to amend a provision of Part 1 of this constitution is
-  passed by not less than two thirds of the members present and voting at a
-  general meeting.
-\end{enumerate}
-\item \label{Part2amend} Any provision contained in Part 2 of this constitution may be amended,
-  provided that any such amendment is made by resolution passed by a simple
-  majority of the members present and voting at a general meeting.
-\item If bye-laws have been adopted to permit and regulate voting at general meetings electronically or by post then, for the purposes of sub-clauses~\ref{Part1amend}(b) and~\ref{Part2amend} of this clause, any votes validly cast under those bye-laws shall be deemed to have been cast by a member present and voting at the relevant general meeting.
-\end{enumerate}
-
-\section*{PART 2}
-
-\subsection{Membership}
-
-\begin{enumerate}
-\item Membership is open to individuals of eighteen or over who are
-approved by the Committee, and to organisations which are
-approved by the Committee.
-\item 
-\begin{enumerate}
-\item Each application for membership shall be notified to the Committee.
-  If no member of the Committee has raised an objection within fourteen days of
-  such notification then the application shall be deemed to have been approved.
-  If an objection has been raised within this period then the Committee shall
-  determine the matter by resolution.
-\item The Committee may refuse an application for membership only if, acting
-  reasonably and properly, they consider it to be in the best interests of
-  UK-TUG to refuse the application.
-\item The Committee must inform the applicant in writing of the reasons for the
-  refusal within twenty-one days of the decision.
-\item The Committee must consider any written representations the applicant may
-  make about the decision. The Committee's decision following any written
-  representations must be notified to the applicant in writing but shall be
-  final.
-\end{enumerate}
-\item Membership is not transferable to anyone else.
-\item The Committee must keep a register of names and addresses of the members.
-\item Each member has an obligation to inform the committee of any change of
-  address.
-\end{enumerate}
-
-\subsection{Termination of Membership}
-
-\begin{enumerate}
-\item Membership is terminated if:
-  \begin{enumerate}
-    \item the member dies or, if it is an organisation, ceases to exist;
-    \item the member resigns by written notice to UK-TUG unless, after the
-      resignation, there would be fewer than two members.
-  \end{enumerate}
-\item The Committee may resolve to terminate membership if:
-  \begin{enumerate}
-    \item any sum due from the member to UK-TUG is not paid in full within six
-      months of it falling due;
-    \item the member fails to provide the Committee with a current
-      postal address. 
-  \end{enumerate}
-\item A member may be removed from membership by a resolution of the Committee
-  that it is in the best interests of UK-TUG that his or her membership be
-  terminated. A resolution to remove a member from membership may be passed
-  only if:
-  \begin{enumerate}
-    \item the member has been given at least twenty-one days' notice in writing of
-      the meeting of the Committee at which the resolution will be proposed and the
-      reasons why it is to be proposed;
-    \item the member or, at the option of the member, the member's representative
-      (who need not be a member of UK-TUG) has been allowed to make representations
-      to the meeting.
-  \end{enumerate}
-\end{enumerate}
-
-\subsection{General meetings}
-
-\begin{enumerate}
-\item An annual general meeting must be held in each calendar year and not
-  more than fifteen months may elapse between successive annual general
-  meetings.
-\item All general meetings other than annual general meetings shall be called
-  special general meetings.
-\item The Committee may call a special general meeting at any time.
-\item The Committee must call a special general meeting if requested to do so in
-  writing by at least ten members or one tenth of the membership, which ever is
-  the greater. The request must state the nature of the business that is to be
-  discussed. If the Committee fail to hold the meeting within twenty eight days
-  of the request, the members may proceed to call a special general meeting but
-  in doing so they must comply with the provisions of this constitution.
-\item Subject to the provisions of this Constitution, the Committee may make 
-  regulations to permit the business of a special general meeting to be
-  conducted by electronic means.
-\end{enumerate}
-
-\subsection{Notice}
-
-\begin{enumerate}
-\item The minimum period of notice required to hold any general meeting of
-  UK-TUG is twenty-eight clear days from the date on which the notice is deemed to
-  have been given.
-\item \label{ShortNotice} A general meeting may be called by shorter notice, 
-  if it is so agreed by all the members entitled to attend and vote.
-\item The notice must specify the date, time and place of the meeting and the
-  general nature of the business to be transacted. If the meeting is to be an
-  annual general meeting, the notice must say so. If the meeting is to be conducted
-  by electronic means then the notice must specify the dates and times for the
-  start and finish of the period during which business may be conducted, such period to
-  last for at least seven days.
-\item The notice must be given to all the members and to the Committee.
-\item Notice of any motions to be considered at a general meeting must be given
-  in writing, must be received by
-  the Secretary at least fourteen days before the date of the meeting, and shall be 
-  circulated to members at least seven days before the date of the meeting. If the
-  meeting is called at short notice under sub-clause~\ref{ShortNotice} of this clause 
-  then the motions to be considered must be agreed at the time the meeting is called. 
-\end{enumerate}
-
-\subsection{Quorum}
-
-\begin{enumerate}
-\item Except as specified in sub-clause~\ref{ElecQuor} of this clause, no business 
-  shall be transacted at any general meeting unless a quorum of members is present
-  at that meeting.
-\item \label{NumQuor} A quorum is:
-  \begin{itemize}
-    \item ten members entitled to vote upon the business to
-      be conducted at the meeting; or
-    \item one tenth of the total membership at the time,
-  \end{itemize}
-  whichever is the greater.
-\item The authorised representative of a member organisation shall be counted in
-  the quorum.
-\item If:
-  \begin{enumerate}
-    \item a quorum is not present within half an hour from the time appointed for
-      the meeting; or
-    \item during a meeting a quorum ceases to be present,
-  \end{enumerate}
-  the meeting shall be adjourned to such time and place as the Committee shall
-  determine.
-\item The Committee must reconvene the meeting and must give at least seven
-  clear days' notice of the reconvened meeting stating the date, time and place
-  of the meeting.
-\item If no quorum is present at the reconvened meeting within fifteen minutes
-  of the time specified for the start of the meeting the members present at that
-  time shall constitute the quorum for that meeting.
-\item \label{ElecQuor} If the business of a special general meeting is to be conducted 
-  by electronic means
-  then no quorum shall be required for the discussion of any item. A quorum as specified
-  in sub-clause~\ref{NumQuor} of this clause shall be required for any vote, and each 
-  member voting or registering an abstention on the item (whether electronically or by post),
-  or taking part in the electronic discussion of that item, shall be counted in the quorum.
-\end{enumerate}
-
-\subsection{Chair}
-
-\begin{enumerate}
-\item General meetings shall be chaired by the person who has been elected as
-  Chair of UK-TUG.
-\item If there is no such person or he or she is not present within fifteen
-  minutes of the time appointed for the meeting a Committee member nominated by
-  the Committee shall chair the meeting.
-\item If there is only one Committee member present and willing to act, he or
-  she shall chair the meeting.
-\item If no Committee member is present and willing to chair the meeting within
-  fifteen minutes after the time appointed for holding it, the members present
-  and entitled to vote must choose one of their number to chair the meeting.
-\end{enumerate}
-
-\subsection{Adjournments}
-
-\begin{enumerate}
-\item The members present at a meeting may resolve that the meeting shall be
-  adjourned.
-\item The person who is chairing the meeting must decide the date time and place
-  at which meeting is to be reconvened unless those details are specified in the
-  resolution.
-\item No business shall be conducted at an adjourned meeting unless it could
-  properly have been conducted at the meeting had the adjournment not taken
-  place.
-\item If a meeting is adjourned by a resolution of the members for more than
-  seven days, at least seven clear days' notice shall be given of the reconvened
-  meeting stating the date time and place of the meeting.
-\end{enumerate}
-
-\subsection{Votes}
-
-\begin{enumerate}
-\item Each member shall have one vote but if there is an equality of votes the
-  person who is chairing the meeting shall have a casting vote in addition to
-  any other vote he or she may have.
-\item If the business of a special general meeting is to be conducted by electronic means
-  then the Committee shall make provision for members to vote by post instead 
-  of electronically.
-\item The Committee may make regulations to permit members to cast votes at other general
-  meetings (where business is not conducted electronically) in writing, or by electronic means.
-\end{enumerate}
-
-\subsection{Representatives of Other Bodies}
-
-\begin{enumerate}
-\item Any organisation that is a member of UK-TUG may nominate any person to act
-  as its representative at any meeting of UK-TUG.
-\item The organisation must give written notice to UK-TUG of the name of its
-  representative. The nominee shall not be entitled to represent the
-  organisation at any meeting unless the notice has been received by UK-TUG. The
-  nominee may continue to represent the organisation until written notice to the
-  contrary is received by UK-TUG.
-\item Any notice given to UK-TUG will be conclusive evidence that the nominee is
-  entitled to represent the organisation or that his or her authority has been
-  revoked. UK-TUG shall not be required to consider whether the nominee has been
-  properly appointed by the organisation.
-\end{enumerate}
-
-\subsection{Officers and Committee members}
-
-\begin{enumerate}
-\item UK-TUG and its property shall be managed and administered by a committee
-  comprising the Officers and other committee members. These persons are in
-  this constitution called ``the Committee members'', and together are called ``the
-  Committee''.
-\item UK-TUG shall have the following Officers:
-\begin{itemize}
-\item A Chair,
-\item A Secretary,
-\item A Treasurer,
-\end{itemize}
-  and any other Officers as the Committee may by regulation determine.
-  The Chair shall be an ex-officio member of the Committee, and the other Officers
-  shall be elected from among the Committee members as described in
-  Clause~\ref{Appointment}.
-\item A Committee member must be a member of UK-TUG or the nominated
-  representative of an organisation that is a member of UK-TUG.
-\item No one may be appointed a Committee member if he or she would be
-  disqualified from acting under the provisions of Clause~\ref{Disqualification}.
-\item The number of Committee members shall be not less than three but (unless
-  otherwise determined by a resolution of UK-TUG in general meeting) shall not
-  be subject to any maximum.
-\item A Committee member may not appoint anyone to act on his or her behalf at
-  meetings of the Committee members.
-\end{enumerate}
-
-\subsection{The Appointment of Committee members}
-\label{Appointment}
-
-\begin{enumerate}
-\item The Chair of UK-TUG shall be elected by a ballot of all
-  members, the result of the election being announced at an Annual
-  General Meeting.  The newly elected Chair shall take up office
-  immediately after this Annual General Meeting and shall retire at
-  the conclusion of the second Annual General Meeting following.
-\item UK-TUG shall elect Committee members at annual general meeting.
-\item The Committee shall elect from amongst its numbers the Secretary, the
-  Treasurer and all other Officers (apart from the Chair).
-\item 
-  \begin{enumerate}
-    \item The Committee may appoint any person who is willing to act as a Committee
-      member.
-    \item In the event of a vacancy for the Chair of UK-TUG
-      the Committee may appoint a Committee member to act as Chair of
-      UK-TUG until the conclusion of the next Annual General Meeting.
-  \end{enumerate}
-\item Each of the Committee members apart from the Chair shall retire with
-  effect from the conclusion of the annual general meeting next after his or her
-  appointment but shall be eligible for re-election at that annual general
-  meeting.
-\item No-one may be elected a Committee member at any annual
-  general meeting, or as Chair by ballot, unless prior to the meeting or the ballot 
-  UK-TUG is given notice that:
-  \begin{enumerate}
-  \item is signed by a member entitled to vote at the meeting or in the ballot;
-  \item states the member's intention to propose the appointment of a person as a
-    Committee member or as Chair;
-  \item is signed by the person who is to be proposed to show his or her
-    willingness to be appointed.
-  \end{enumerate}
-\item The appointment of a Committee member, whether by UK-TUG in general
-  meeting or by the other Committee members, must not cause the number of
-  Committee members to exceed any number fixed in accordance with this
-  constitution as the maximum number of Committee members.
-\end{enumerate}
-
-\subsection{Powers of the Committee}
-
-\begin{enumerate}
-\item The Committee must manage the business of UK-TUG and they have the
-  following powers in order to further the Objects (but not for any other
-  purpose):
-  \begin{enumerate}
-  \item to raise funds. In doing so, the Committee must not undertake any
-    substantial permanent trading activity and must comply with any relevant
-    statutory regulations;
-  \item to co-operate with other charities, voluntary bodies and statutory
-    authorities and to exchange information and advice with them;
-  \item to establish or support any charitable trusts, associations or
-    institutions formed for any of the charitable purposes included in the
-    Objects;
-  \item to acquire, merge with or enter into any partnership or joint venture
-    arrangement with any other association formed for any of the
-    Objects;
-  \item to set aside income as a reserve against future expenditure but only in
-    accordance with a written policy about reserves;
-  \item to obtain and pay for such goods and services as are necessary for
-    carrying out the work of UK-TUG;
-  \item to open and operate such bank and other accounts as the Committee
-    consider necessary and to invest funds and to delegate the management of
-    funds in the same manner and subject to the same conditions as the Trustees
-    of a trust are permitted to do by the Trustee Act 2000;
-  \item to do all such other lawful things as are necessary for the achievement
-    of the Objects;
-  \end{enumerate}
-\item No alteration of this constitution or any special resolution shall have
-  retrospective effect to invalidate any prior act of the Committee.
-\item Any Committee Meeting at which a quorum is present at the time the
-  relevant decision is made may exercise all the powers exercisable by the
-  Committee.
-\end{enumerate}
-
-\subsection{Disqualification and Removal of Committee members}
-\label{Disqualification}
-
-A Committee member shall be deemed to have resigned from the Committee if he or she:
-\begin{enumerate}
-\item ceases to be a member of UK-TUG;
-\item becomes incapable by reason of mental disorder, illness or injury of
-  managing and administering his or her own affairs;
-\item sends a notice of resignation to UK-TUG (but only if at least
-  two Committee members will remain in office when the notice of resignation is
-  to take effect); or
-\item is absent without the permission of the Committee from all their meetings
-  held within a period of six consecutive months and the Committee resolve that
-  his or her office be vacated.
-\end{enumerate}
-
-\subsection{Proceedings of the Committee}
-
-\begin{enumerate}
-\item The Committee may regulate their proceedings as they think fit, subject to
-  the provisions of this constitution. In particular, the Committee may make regulations
-  to permit the conduct of business by electronic means. In this clause the term `meeting'
-  shall be deemed to include any electronic meeting carried out under such regulations.
-\item Any Committee member may call a meeting of the Committee members.
-\item The Secretary must call a meeting of the Committee if requested to do so
-  by a Committee member.
-\item Questions arising at a meeting must be decided by a majority of votes. Votes may
-  be cast in person at a meeting, or in writing, or electronically. Votes must be minuted
-  as described in Clause~\ref{Minutes}.
-\item In the case of an equality of votes, the person who chairs the meeting
-  shall have a second or casting vote.
-\item No decision may be made by a meeting of the Committee unless a quorum is
-  present at the time the decision is purported to be made. In the case of an electronic
-  meeting, any Committee member casting a vote or registering an abstention shall (subject
-  to sub-clause~\ref{NotCount} of this clause) be counted in the quorum.
-\item The quorum shall be two, or the largest number which is not more than one half of 
-  the total number of Committee members entitled to vote, whichever of these is the greater.
-\item \label{NotCount} A Committee member shall not be counted in the quorum present when any
-  decision is made about a matter upon which that Committee member is not
-  entitled to vote.
-\item If the number of Committee members is less than the number fixed as the
-  quorum, the continuing Committee members or Committee member may act only for
-  the purpose of filling vacancies or of calling a general meeting.
-\item The Chair of UK-TUG shall chair meetings of the Committee.
-\item If the Chair is unwilling to preside or is not present within ten minutes
-  after the time appointed for the meeting, the Committee members present may
-  appoint one of their number to chair that meeting.
-\item The person appointed to chair meetings of the Committee shall have no
-  functions or powers except those conferred by this constitution or delegated
-  to him or her in writing by the Committee.
-\end{enumerate}
-
-\subsection{Delegation}
-
-\begin{enumerate}
-\item The Committee may delegate any of their powers or functions to a
-  subcommittee consisting of two or more Committee members and a smaller number
-  of ordinary UK-TUG members. The terms of any such delegation must be recorded
-  in the minute book.
-\item The Committee may impose conditions when delegating, including the
-  conditions that:
-  \begin{itemize}
-  \item the relevant powers are to be exercised exclusively by the subcommittee
-    to whom they delegate;
-  \item no expenditure may be incurred on behalf of UK-TUG except in accordance
-    with a budget previously agreed with the Committee.
-  \end{itemize}
-\item The Committee may revoke or alter a delegation.
-\item All acts and proceedings of any subcommittees must be fully and promptly
-  reported to the Committee.
-\end{enumerate}
-
-\subsection{Irregularities in Proceedings}
-
-\begin{enumerate}
-\item \label{StillValid} Subject to sub-clause~\ref{Irregular} of this clause, all acts done by a meeting of
-  the Committee, or of a subcommittee of Committee members, shall be valid
-  notwithstanding the participation in any vote of a Committee member:
-\begin{itemize}
-\item who was disqualified from holding office;
-\item who had previously retired or who had been obliged by the constitution to
-  vacate office;
-\item who was not entitled to vote on the matter, whether by reason of a
-  conflict of interest or otherwise,
-\end{itemize}
-if, without:
-\begin{itemize}
-\item the vote of that Committee member; and
-\item that Committee member being counted in the quorum,
-\end{itemize}
-the decision has been made by a majority of the Committee members at a quorate
-meeting.
-\item \label{Irregular} Sub-clause~\ref{StillValid} of this clause does not permit a Committee member to keep
-  any benefit that may be conferred upon him or her by a resolution of the
-  Committee or of a subcommittee of Committee members if the resolution would
-  otherwise have been void.
-\item No resolution or act of:
-\begin{enumerate}
-\item the Committee;
-\item any subcommittee of Committee members;
-\item UK-TUG in general meeting,
-\end{enumerate}
-shall be invalidated by reason of the failure to give notice to any Committee
-member or member or by reason of any procedural defect in the meeting unless it
-is shown that the failure or defect has materially prejudiced a member or the
-beneficiaries of UK-TUG.
-\end{enumerate}
-
-\subsection{Minutes}
-\label{Minutes}
-
-The Committee shall keep minutes of all:
-\begin{enumerate}
-\item appointments of Officers and Committee members made by the Committee;
-\item proceedings at meetings of UK-TUG, including the numbers of all votes cast by 
-  whatever means;
-\item meetings of the Committee and subcommittees of Committee members
-  including:
-\begin{itemize}
-\item the names of the Committee members present at the meeting (or, in the case of an electronic meeting, the names of the Committee members casting votes or registering abstentions on resolutions);
-\item the decisions made at the meetings; and
-\item where appropriate the reasons for the decisions.
-\item these minutes must be made available by the committee to any member upon
-  request
-\end{itemize}
-\end{enumerate}
-
-
-\subsection{Accounts}
-
-\begin{enumerate}
-
-\item
-  \begin{enumerate}
-  \item The financial year of UK-TUG shall end on the last day of July in each
-    year.
-
-  \item The Treasurer shall ensure that accounting records are kept which are
-    sufficient to show and explain all UK-TUG's transactions, and which are
-    such as to disclose at any time, with reasonable accuracy, the financial
-    position of UK-TUG at that time.
-
-  \item The accounting records shall in particular contain entries showing
-    from day to day all sums of money received and expended by UK-TUG,
-    and the matters in respect of which the receipt and expenditure takes
-    place; and a record of the assets and liabilities of UK-TUG.
-
-  \item \setcounter{refa}{\value{enumii}}The Committee shall preserve any
-    accounting records made for the purposes of this section in respect of
-    UK-TUG for at least six years from the end of the financial year in which
-    they are made.
-
-  \item If UK-TUG ceases to exist within the period of six years mentioned in
-    paragraph~(\alph{refa}) above as it applies to any accounting records, the
-    obligation to preserve those records in accordance with that paragraph
-    shall continue to be discharged by the last Committee until such time as
-    all the liabilities of UK-TUG have been met.
-  \end{enumerate}
-
-\item
-  \begin{enumerate}
-  \item The Treasurer shall prepare in respect of each financial year of
-    UK-TUG a receipts and payments account, and a statement of assets and
-    liabilities.
-
-  \item \setcounter{refb}{\value{enumii}}The Committee shall preserve the
-    account and statement for at least six years from the end of the financial
-    year in which they are made.
-
-  \item If UK-TUG ceases to exist within the period of six years mentioned in
-    paragraph~(\alph{refb}) above as it applies to any accounting records, the
-    obligation to preserve the account and statement in accordance with that
-    paragraph shall continue to be discharged by the last Committee until such
-    time as all the liabilities of UK-TUG have been met.
-  \end{enumerate}
-
-\item 
-  \begin{enumerate}
-  \item The accounts of UK-TUG for each year shall be examined by an
-    independent examiner, that is to say an independent person who is
-    reasonably believed by the Committee to have the requisite ability and
-    practical experience to carry out a competent examination of the accounts,
-    and who is approved by a resolution passed at a general
-    meeting.
-
-  \item The inspected accounts for each financial year shall be presented to the
-    Annual General Meeting immediately following the end of that financial
-    year.
-  \end{enumerate}
-\end{enumerate}
-
-\subsection{Notices}
-
-\begin{enumerate}
-\item Any notice required by this constitution to be given to or by any person
-  must be:
-  \begin{enumerate}
-  \item in writing; or
-  \item given using electronic communications.
-  \end{enumerate}
-\item Notice may be given to a member either:
-  \begin{enumerate}
-  \item personally; or
-  \item by sending it by post in a prepaid envelope addressed to the member at
-    his or her address; or
-  \item by leaving it at the address of the member; or
-  \item by giving it using electronic communications to the member's electronic address.
-  \end{enumerate}
-\item A member who does not register an address or an electronic address with UK-TUG or who registers
-  only a postal address that is not within the United Kingdom shall not be
-  entitled to receive any notice from UK-TUG.
-\item A member present in person at any meeting of UK-TUG shall be deemed to
-  have received notice of the meeting and of the purposes for which it was
-  called.
-\item
-  \begin{enumerate}
-  \item Proof that an envelope containing a notice was properly addressed,
-    prepaid and posted shall be conclusive evidence that the notice was given.
-  \item Proof that a notice contained in an electronic communication was
-    properly addressed and sent shall be conclusive evidence that the notice was
-    given.
-  \item A notice shall be deemed to be given 48 hours after the envelope
-    containing it was posted or, in the case of an electronic communication, 48
-    hours after it was sent.
-  \end{enumerate}
-\end{enumerate}
-
-\subsection{Rules}
-
-\begin{enumerate}
-\item The Committee may from time to time make rules or bye-laws for the conduct
-  of their business.
-\item The bye-laws may regulate the following matters but are not restricted to
-  them:
-  \begin{enumerate}
-  \item the admission of members of UK-TUG (including the admission of
-    organisations to membership) and the rights and privileges of such members,
-    and the entrance fees, subscriptions and other fees or payments to be made
-    by members;
-  \item the conduct of members of UK-TUG in relation to one another, and to
-    UK-TUG's employees and volunteers;
-  \item the procedure at general meetings and meetings of the Committee in so
-    far as such procedure is not regulated by this constitution and, in particular, provision for electronic and postal voting at general meetings, and for electronic meetings of the Committee;
-  \item the keeping and authenticating of records. (If regulations made under
-    this clause permit records of UK-TUG to be kept in electronic form and
-    require a Committee member to sign the record, the regulations must specify
-    a method of recording the signature that enables it to be properly
-    authenticated.)
-  \item generally, all such matters as are commonly the subject matter of the
-    rules of an unincorporated association.
-  \end{enumerate}
-\item UK-TUG in general meeting has the power to alter, add to or repeal the
-  rules or bye-laws.
-\item The Committee must adopt such means as they think sufficient to bring the
-  rules and bye-laws to the notice of members of UK-TUG.
-\item The rules or bye-laws shall be binding on all members of UK-TUG. No rule
-  or bye-law shall be inconsistent with, or shall affect or repeal anything
-  contained in, this constitution.
-\end{enumerate}
 
 \end{document}
