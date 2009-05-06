@@ -1,6 +1,6 @@
 \documentclass[a4paper,twoside,twocolumn]{article}
 
-\usepackage{hyperref}           % For hyperlinks
+\usepackage{hyperref}             % For hyperlinks
 \usepackage{amsmath, amssymb}     % Use for end of article bullets and eikibooks article
 \usepackage[ansinew]{inputenc}    % For "£"
 \usepackage{marvosym}             % For currency symbols
@@ -14,14 +14,17 @@
 \usepackage{graphicx}             % For various illustrations
 \usepackage{wrapfig}
 
-% -----------------------------------------------------------------------------------
+% #----------------------------------------------------------------------------------
 % Baskerville Definitions
 
 % UK-TUG logo with dropped U
 % \def \ukt {UK-T\kern -0,07 em\lower 0,7 ex\hbox{U}\kern 0,07 em G} % Original as 9.1
-\def \ukt {UK-T\kern -0,20 em\lower 0,5 ex\hbox{U}\kern -0,08 em G}
+% \def \ukt {UK-T\kern -0,20 em\lower 0,5 ex\hbox{U}\kern -0,08 em G}
 
-\newcommand{\BK}{\textit{Baskerville}}
+% Version of UK-TUG without dropped U as preferred by the committee
+\def \ukt {UK-TUG}
+
+\newcommand{\BV}{\textit{Baskerville}}
 \newcommand{\ISSUEDATE}{May 2009}
 
 % Used for author name at top of article
@@ -33,16 +36,9 @@
 \hyphenation{Bas-ker-ville Wiki-pedia Wiki-book Wiki-books}
 
 % -----------------------------------------------------------------------------------
-% Definitions for the Constitution
-% \newcounter{refa}
-% \newcounter{refb}
-% \font\manual=manfnt
-% \newcommand{\MF}{{\manual META}\-{\manual FONT}}
-% -----------------------------------------------------------------------------------
-
-% Applicable for A5
-% \voffset    -2cm
-% \textheight 16cm
+\font\manual=manfnt
+\newcommand{\MF}{{\manual META}\-{\manual FONT}}
+\newcommand{\MP}{\texttt{META}\-\texttt{POST}}
 
 % -----------------------------------------------------------------------------------
 % Heading for pages after the first page.
@@ -50,10 +46,10 @@
 \pagestyle{fancy}
 
 % One heading per page, to the margin
-\fancyhead[RE]{}
-\fancyhead[LE]{\textit{Baskerville}}          % Recto / Odd
-\fancyhead[RO]{\textit{Volume 10, Number 1}}  % Verso / Even
 \fancyhead[LO]{}
+\fancyhead[LE]{\BV}                          
+\fancyhead[RO]{\textit{Volume 10, Number 1}}
+\fancyhead[RE]{}
 
 % \lhead{\textit{Baskerville}}
 % \rhead{\textit{Volume 10, Number 1}}
@@ -73,18 +69,21 @@
 
 \includegraphics[width=0.95\textwidth]{lion.png} \\ [2cm]
 
-\textsc{\large The Annals of the UK-\TeX\ Users' Group} \\[0.2cm]
+\textsc{\Large The Annals of the UK-\TeX\ Users' Group} \\[0.2cm]
 \href{http://uk.tug.org/}{http://uk.tug.org/} \\[0.2cm]
 {\large ISSN 1354-5930}
 
 \vfill
 
 % Bottom of the page
+{\large
 \begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}} l c r }
            & Edited by                 &             \\
 Vol. 10.1  & Jonathan \textsc{Webley}  & \ISSUEDATE  \\
-\end{tabular*}
+\end{tabular*}}
+
 \end{center}
+
 \end{titlepage}
 
 % -----------------------------------------------------------------------------------
@@ -96,15 +95,15 @@ Vol. 10.1  & Jonathan \textsc{Webley}  & \ISSUEDATE  \\
 \noindent \textbf{\ukt\ Committee 2009}
 
 \begin{itemize}
-   % \setlength{\parskip}{0pt} % Scrunch up to fit on A5 page
+   \setlength{\parskip}{1pt} % Scrunch up to fit on first column
    \item Jonathan Fine (Chair)
    \item David Crossland (Secretary)
    \item David Saunders (Treasurer)
-   \item Joseph Wright (Membership Secretary and Webmaster, co-opted)
+   \item Joseph Wright (Membership Secretary and Webmaster)
    \item John Trapp (Training Officer)
    \item Jonathan Underwood
    \item Charles Goldie
-   \item Simon Dales (co-opted)
+   \item Simon Dales
    \item Jonathan Webley (Baskerville Editor, co-opted)
 \end{itemize}
 The  committee can be contacted at:
@@ -114,15 +113,25 @@ The  committee can be contacted at:
 
 % ----------------------------------------------------------------------------------------
 \section{Editorial}
-Welcome to the revived \BK. \BK\ was for many years the journal of \ukt\ and archived copies are available through our website. The \ukt\ committee have decided to start anew publication of \BK\ and I have been co-opted onto the committee as editor. This is the first new issue. Since the purpose of \TeX\ is to produce ``marks on paper'' \BK\ has been printed and posted out; though the PDF version has been emailed out and is also available on the web.
+Welcome to the revived \BV. \BV\ was for many years the journal of \ukt\ and archived copies are available through our website. The \ukt\ committee has decided to start anew publication of \BV\ and I have been co-opted onto the committee as editor. This is the first new issue. Since the purpose of \TeX\ is to produce ``marks on paper'' \BV\ has been printed and posted out; though the PDF version has been emailed out and is also available on the web. Contact me if you do not wish to receive paper copies of subsequent issues.
 
-The journal is named after a serif typeface designed in 1757 by John Baskerville. Previous issues of \BK\ used the Baskerville font but this issue uses the default \textit{Computer Modern} font.
+The journal is named after a serif typeface designed in 1757 by John Baskerville. Previous issues of \BV\ used the Baskerville font but this issue uses the default \textit{Computer Modern} font.
 
-This particular issue is somewhat light in content. The quality of future issues will depend on \textit{you}, the membership of \ukt. I do not intent to create all the content myself, and welcome contributions on matters relevant to \TeX\ or \ukt.
+This particular issue is somewhat light in content. The quality of future issues will depend on \textit{you}, the membership of \ukt. I do not intend to create all the content myself, and welcome contributions on matters relevant to \TeX\ or \ukt.
 
 I think that a newsletter is central to the well-being of a user group such as ours, and I look forwards to hearing your comments on this issue.
 
 \hfill Jonathan Webley
+
+\hfill \ \href{mailto:baskerville@uk.tug.org}{baskerville@uk.tug.org}
+
+% ----------------------------------------------------------------------------------------
+\section{Baskerville Survey}
+The committee of \ukt\ recently undertook a small online survey with regard to the preferred format for \BV. There were 34 responses and almost 90\% of respondents would prefer to see \BV\ in A4 format. Just over half want a printed copy.
+
+There were several favourable comments regarding the return of \BV. Members of \ukt\ are looking for news about UK-TUG and TUG. They also want technical articles on various topics relating to \TeX\ and friends, such as on \LaTeX\ packages and ``how to'' articles.
+
+These requests correspond with our vision for \BV\ and hopefully we can meet the high standards set by previous editors.
 
 % ----------------------------------------------------------------------------------------
 \section{Events}
@@ -135,7 +144,11 @@ I think that a newsletter is central to the well-being of a user group such as o
     \vspace{-10pt}
 \end{wrapfigure}
 
-Bacho\TeX\ 2009 is the XVII\textsuperscript{th} Polish \TeX\ Users Group Conference which took place at the traditional \TeX ies' and GUST meeting place, Bachotek near Brodnica, in the north-east of Poland, from 29 April until 3 May 2009 inclusive.
+The Polish \TeX\ Users Group, GUST, have been holding an annual international \TeX\ conference since 1993. These conferences aim to popularize \TeX, \MF\ and other \TeX\ related software as well as typography in general.
+
+The XVIIth Conference, Bacho\TeX\ 2009, was held at the traditional \TeX ies' and GUST meeting place, Bachotek near Brodnica, in the north-east of Poland, from 29 April until 3 May 2009 inclusive. The GUST AGM was held during the conference.
+
+%Bacho\TeX\ 2009 is the XVIIth International Conference of the Polish \TeX\ Users Group (GUST) which took place at the traditional \TeX ies' and GUST meeting place, Bachotek near Brodnica, in the north-east of Poland, from 29 April until 3 May 2009 inclusive.
 
 The conference aimed to get a glimpse of the future, and the title was:
 \begin{center} ``\textit{\TeX: at a turning point, or at the crossroads?}'' \end{center}
@@ -147,17 +160,17 @@ Bogus\l{}aw Jackowski is chairman of the Program Committee which can be contacte
 
 The conference website is:
 \begin{center}
-\href{http://www.gust.org.pl/bachotex/2009/main-en.html?set_language=en}{www.gust.org.pl/BachoTeX/2009}   $\blacksquare$
+\href{http://www.gust.org.pl/bachotex/2009/main-en.html?set_language=en}{www.gust.org.pl/BachoTeX/2009}
 \end{center}
 
 % ----------------------------------------------------------------------------------------
 \subsection{Call for \TeX\ Pearls}
-GUST, the organisers of Bacho\TeX\, are seeking to continue the tradition of ``The Pearls of \TeX\ Programming''.
+GUST, the organisers of Bacho\TeX, are seeking to continue the tradition of ``The Pearls of \TeX\ Programming''.
 Briefly, Pearls are
 \begin{itemize}
-\item short \TeX, \texttt{MetaFont} or \texttt{MetaPost} macros
-\item contain code that is easy to explain and preferably not obvious
-\item obscure oddities, exhibiting weird \TeX\ behaviour -- dirty and risky tricks and traps are also welcome
+\item short and generic \TeX, \MF\ or \MP\ macros
+\item code snippets that are easy to explain and preferably not obvious
+\item sometimes obscure oddities, exhibiting weird \TeX\ behaviour -- dirty and risky tricks and traps are also welcome
 \item not necessarily useful or serious
 \end{itemize}
 
@@ -166,9 +179,9 @@ Pearls are collected throughout the year by Pawe\l\ Jackowski, contact:
 \href{mailto:pearls@gust.org.pl}{pearls@gust.org.pl}
 \end{center}
 
-Further details can be found at:
+Further details, and the collection of pearls, can be found at:
 \begin{center}
-\url{http://www.gust.org.pl/projects/pearls/}  $\blacksquare$
+\href{http://www.gust.org.pl/projects/pearls/}{www.gust.org.pl/projects/pearls}
 \end{center}
 
 % ----------------------------------------------------------------------------------------
@@ -180,7 +193,7 @@ Further details can be found at:
     \vspace{-10pt}
 \end{wrapfigure}
 
-The British Society for the History of Mathematics is hosting a workshop on the relationship between mathematics and fiction on 30-31 May 2009 at Rewley House, Oxford. The workshop will include readings and interviews with writers, talks about the uses of mathematics in fiction, and opportunities for discussion and debate.
+The British Society for the History of Mathematics is hosting a workshop on the relationship between mathematics and fiction on 30 and 31 May 2009 at Rewley House, Oxford. The workshop will include readings and interviews with writers, talks about the uses of mathematics in fiction, and opportunities for discussion and debate.
 
 One of the contributors is Donald Knuth, the creator of \TeX. He is Professor Emeritus of the Art of Computer Programming at Stanford University and author of the seminal multi-volume work ``The Art of Computer Programming''. Knuth will be talking about his novel ``Surreal Numbers'', published in 1974 and still available on Amazon.
 
@@ -192,8 +205,8 @@ The workshop is organised by
 \end{itemize}
 Further details of the workshop can be found at:
 \begin{center}
-\url{http://www.bshm.org/meetings/Fiction.html}
-\end{center}  $\blacksquare$
+\href{http://www.bshm.org/meetings/Fiction.html}{www.bshm.org/meetings/Fiction.html}
+\end{center}
 
 % ----------------------------------------------------------------------------------------
 \subsection{Euro\TeX\ 2009}
@@ -210,7 +223,7 @@ The fee for \ukt\ members is \euro350, which includes everything except the excu
 
 The official website is:
 \begin{center}
- \href{http://www.ntg.nl/EuroTeX2009/index.html}{www.ntg.nl/EuroTeX2009} $\blacksquare$
+ \href{http://www.ntg.nl/EuroTeX2009/index.html}{www.ntg.nl/EuroTeX2009}
 \end{center}
 
 % ----------------------------------------------------------------------------------------
@@ -221,38 +234,41 @@ The official website is:
     \vspace{-10pt} % Remove space at bootom of logo
 \end{wrapfigure}
 
-TUG 2009 will take place in Notre Dame, Indiana, from 28-31 July. For the registration form, maps, the proposals already accepted, and more see:
+TUG 2009 will take place in Notre Dame, Indiana, from 28 to 31 July.
+This three-day conference focuses on practical techniques for document production using \LaTeX, \TeX, ConTeXt, \texttt{MetaPost} and friends.
+
+For the registration form, maps, the proposals already accepted, and more see:
 \begin{center}
 \href{http://tug.org/tug2009}{http://tug.org/tug2009}
 \end{center}
 
-April has several deadlines related to the conference:
+April had several deadlines related to the conference:
 
 \begin{itemize}
 	\item 13 April 2009: This is the deadline for abstract submissions; the call for papers is at: 
   \begin{center}
   \href{http://tug.org/tug2009/cfp.html}{http://tug.org/tug2009/cfp.html}
   \end{center}
-  Although proposals may be accepted after the deadline, of course potential attendees would like to know what they'll be seeing. So if you'd like to give a talk, please try to submit an abstract by the 13\textsuperscript{th}.
+  Although proposals may be accepted after the deadline, of course potential attendees would like to know what they'll be seeing. So if you'd like to give a talk, please try to submit an abstract by the 13th.
   
-  \item 17 April 2009: This is the deadline for bursary applications; for information and the application form see
+  \item 17 April 2009: This is the deadline for bursary applications; for information and the application form see:
   \begin{center}
   \href{http://tug.org/bursary}{http://tug.org/bursary} 
   \end{center}
   No late applications will be accepted.
   
-  \item 27 April 2009: This is the deadline for the early bird registration discount. After this date, the registration fee will be increased. Register for the conference through Notre Dame's website via this link 
+  \item 27 April 2009: This is the deadline for the early bird registration discount. After this date, the registration fee will be increased. Register for the conference through Notre Dame's website via this link:
 \begin{center}
-\url{http://tug.org/tug2009/register.html} $\blacksquare$
+\href{http://tug.org/tug2009/register.html}{tug.org/tug2009/register.html}
 \end{center}
 \end{itemize}
 
 % ----------------------------------------------------------------------------------------
 \subsection{UKUUG Summer Conference 2009}
 
-\begin{wrapfigure}{R}{0.15\textwidth}
+\begin{wrapfigure}{R}{0.18\textwidth}
     \vspace{-10pt}
-    \includegraphics[width=0.13\textwidth]{ukuug-2006.png}
+    \includegraphics[width=0.16\textwidth]{ukuug-2006.png}
     \vspace{-10pt}
 \end{wrapfigure}
 
@@ -260,14 +276,17 @@ UKUUG is the UK's Unix and Open Systems User Group. Their summer conference will
 \begin{center}
 \href{http://ukuug.org/events/summer2009/}{http://ukuug.org/events/summer2009/} 
 \end{center}
-One of the streams is a half day session on \textit{\TeX\ and typesetting}.  $\blacksquare$
+One of the streams will be a half day training session on \textit{\TeX\ and typesetting}.
 
 % ----------------------------------------------------------------------------------------
 % \newpage
 \section{The Hound}
-This is a somewhat easy, cryptic crossword and the solution can be found later in this issue.
 
-\vspace{1em}
+\AUTHOR{Jonathan Webley}
+
+\noindent This is a somewhat easy, cryptic crossword and the solution can be found at the end of this issue.
+
+\vspace{3ex}
 
 \begin{Puzzle}{9}{9}
 |[1]C |A |[2]S |E |* |[3]A |[4]W |L |[5]S |.
@@ -281,9 +300,10 @@ This is a somewhat easy, cryptic crossword and the solution can be found later i
 |[13]S |L |E |D |* |[14]M |E |M |E |.
 \end{Puzzle}
 
-\vspace{1em}
+\vspace{2ex}
 
 \noindent \textbf{Across} \\[2ex]
+{\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{r l}
  \textbf{1} & In Africa, see a container. (4)\\
  \textbf{3} & These tools are a product of bad laws. (4)\\
@@ -294,11 +314,12 @@ This is a somewhat easy, cryptic crossword and the solution can be found later i
  \textbf{12} & Mineral found in store? (3)\\
  \textbf{13} & Poor deals are without a toboggan. (4)\\
  \textbf{14} & Idea came from me, twice. (4)\\
-\end{tabular}
+\end{tabular}}
 
 \vspace{2ex}
 
-\noindent \textbf{Down} \\ %[2ex]
+\noindent \textbf{Down} \\ [2ex]
+{\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{r l}
  \textbf{1}  & In the discus, perhaps, achieve one's \\
              & peak. (4) \\
@@ -310,12 +331,9 @@ This is a somewhat easy, cryptic crossword and the solution can be found later i
  \textbf{7}  & Hades loses a ghost. (5)\\
  \textbf{9}  & These insects cause errors. (4)\\
  \textbf{10} & Sounds like I hear when present. (4)\\
-\end{tabular}
+\end{tabular}}
 
 % ----------------------------------------------------------------------------------------
-% \section{\LaTeX\ Hints \& Tips}
-% \textbf{Currency Symbols} \\
-
 \section{Currency Symbols in \LaTeX}
 
 \AUTHOR{Jonathan Webley}
@@ -323,7 +341,7 @@ This is a somewhat easy, cryptic crossword and the solution can be found later i
 \subsection{The Dollar and the Pound}
 Standard keyboards contain the dollar sign (\$), which, of course, is a special symbol in \TeX, so needs to be prefaced with a backslash or oblique: \textbackslash \$. This symbol works properly in both text mode and math mode.
 
-Keyboards also have a pound sign (£), the use of which requires the package \texttt{inputenc}. Additionally, there is a standard command \textbackslash \texttt{pounds}, which renders as \pounds. This symbol works properly in both text mode and math mode.
+Keyboards also have a pound sign (£), the use of which requires the package \texttt{inputenc}. Additionally, there is a standard command \textbackslash \texttt{pounds}, which renders as \pounds. This command works properly in both text mode and math mode.
 
 Additionally, standard \LaTeX\ contains two commands for these signs:
 
@@ -395,16 +413,6 @@ baht & Thailand (THB) \\
 \midrule
 \textcent & \textbackslash \texttt{textcent} \\
 cent & US, Canada \\
-\bottomrule
-\end{tabular}
-
-\vfill
-\newpage
-
-\begin{tabular}{p{2.2cm} p{4.3cm}}
-\toprule
-\textbf{Symbol} & \textbf{\LaTeX}  \\
-\textbf{Name}   & \textbf{Used in} \\
 \midrule
 \textcentoldstyle & \textbackslash \texttt{textcentoldstyle} \\
 cent, old style & \\
@@ -415,11 +423,20 @@ col\'on  & Costa Rica (CRC), \\
 cedi     & Ghana (GHS) \\
 \midrule
 \textcurrency & \textbackslash \texttt{textcurrency} \\
-         & generic currency sign, it is used when no other sign is available. \\
+              & generic currency sign, it is a character used to denote a currency when the symbol for that currency is unavailable \\
+\bottomrule
+\end{tabular}
+
+%\vfill
+\newpage
+
+\begin{tabular}{p{2.2cm} p{4.3cm}}
+\toprule\textbf{Symbol} & \textbf{\LaTeX}  \\
+\textbf{Name}           & \textbf{Used in} \\
 \midrule
-\textdollaroldstyle & \textbackslash \texttt{textdollaroldstyle} \\
-escudo\footnotemark[1] & formerly Portugal (PTE), \\
-                       & Cape Verde (CVE) \\
+\textdollaroldstyle     & \textbackslash \texttt{textdollaroldstyle} \\
+escudo\footnotemark[1]  & formerly Portugal (PTE), \\
+                        & Cape Verde (CVE) \\
 \midrule
 \textdong & \textbackslash \texttt{textdong} \\
 dong & Vietnam (VND) \\
@@ -435,7 +452,7 @@ or guilder   & Netherlands Antilles (ANG) \\
 guarani      & Paraguay (PYG) \\
 \midrule
 \textlira & \textbackslash \texttt{textlira} \\
-lira & Formerly Italy (ITL) and others \\
+lira & formerly Italy (ITL) and others \\
 \midrule
 \textnaira & \textbackslash \texttt{textnaira} \\
 naira & Nigeria (NGN) \\
@@ -446,15 +463,6 @@ peso & Philippines (PHP) \\
 \textwon & \textbackslash \texttt{textwon} \\
 won & South Korea (KRW), \\
     & North Korea (KPW) \\
-
-%\bottomrule
-%\end{tabular}
-%\vfill
-%\begin{tabular}{p{2cm} p{4cm}}
-%\toprule
-%\textbf{Symbol} & \textbf{\LaTeX}  \\
-%\textbf{Name}   & \textbf{Used in} \\
-
 \midrule
 \textyen  & \textbackslash \texttt{textyen} \\
 yen       & Japan (JPY)  \\
@@ -465,15 +473,15 @@ yuan      & China (CNY)  \\
 
 \footnotetext[1]{This version of the dollar sign with two vertical lines is called the cifrão. Amounts are generally written so that it serves as the decimal separator, such as 20\textdollaroldstyle00 for 20 escudos.}
 
-\medskip
+%\medskip
 
 The \texttt{mathdesign} package redefines \textbackslash \texttt{texteuro} to be compatible with these fonts: \textit{Utopia}, \textit{Charter} or \textit{Garamond}.
 
-\medskip
+%\medskip
 
 And then there is the \texttt{marvosym} package which has these symbols:
 
-\medskip
+%\medskip
 
 \begin{center}
 \begin{tabular}{p{2.5cm} p{4cm}}
@@ -482,28 +490,38 @@ And then there is the \texttt{marvosym} package which has these symbols:
                 & \textbf{Use} \\
 \midrule
 \Denarius   & \textbackslash \texttt{Denarius}\footnotemark[2] \\
-            & Obsolete symbol for the German pfennig \\
+            & obsolete symbol for the German pfennig \\
 \EUR        & \textbackslash \texttt{EUR} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{p{2.5cm} p{4cm}}
+\toprule
+\textbf{Symbol} & \textbf{\LaTeX}  \\
+                & \textbf{Use} \\
+\midrule                
 \EURcr      & \textbackslash \texttt{EURcr} \\
-            & Euro compatible with \textit{Courier}. \\
+            & euro compatible with \textit{Courier} \\
 \EURdig     & \textbackslash \texttt{EURdig} \\
-            & Euro compatible with \texttt{marvosym} digits. \\
+            & euro compatible with \texttt{marvosym} digits \\
 \EURhv      & \textbackslash \texttt{EURhv} \\
-            & Euro compatible with \textit{Helvetica}. \\
+            & euro compatible with \textit{Helvetica} \\
 \EURtm      & \textbackslash \texttt{EURtm} \\
-            & Euro compatible with \textit{Times} \textit{Roman}. \\
+            & euro compatible with \textit{Times} \textit{Roman} \\
 \EyesDollar & \textbackslash \texttt{EyesDollar} \\
 \Shilling   & \textbackslash \texttt{Shilling}\footnotemark[3] \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-In conclusion, \LaTeX\ caters for all common, and some not so common, currency symbols. Unicode, however, has a few additional ones, and is far better documented.  $\blacksquare$
+In conclusion, \LaTeX\ caters for all common, and some not so common, currency symbols. Unicode, however, has a few additional ones, and is far better documented.
 
 % \vfill
 
-\footnotetext[2]{The denarius was a Roman coin. The dinar is a descendant of the denarius and is used, or was formerly used, by several countries. However, Serbia, for example, use the cyrillic De (\textcyrrm{D}) letter for the dinar.}
-\footnotetext[3]{This symbol resembles a beta ($\beta$) but I belive it to be more akin to the German Eszett (\ss). It is possibly a symbol for the schilling, the pre-euro currency of Austria.}
+\footnotetext[2]{The denarius was a Roman coin. The dinar is a descendant of the denarius and is used, or was formerly used, by several countries. However, Serbia, for example, uses the Cyrillic De (\textcyrrm{D}) letter for the dinar.}
+\footnotetext[3]{This symbol resembles a beta ($\beta$) but I believe it to be more akin to the German Eszett (\ss). It is possibly a symbol for the schilling, the pre-euro currency of Austria.}
 
 % ----------------------------------------------------------------------------------------
 \section{Wikibooks}
@@ -511,22 +529,22 @@ In conclusion, \LaTeX\ caters for all common, and some not so common, currency s
 \AUTHOR{Jonathan Webley}
 
 \subsection{Wikis}
-Wikis are the backbone of Web 2.0 - collaborative websites with dynamic, user-driven content.
+Wikis are the backbone of Web 2.0 -- collaborative websites with dynamic, user-driven content.
 
-The Wikimedia Foundation hosts many wiki projects in many languages using its MediaWiki application. These wikis all have the same, simple ethos - information is free. Notoriously, any anonymous amateur can contribute and there is no guarantee that information is either correct, complete or legal. 
-
-\begin{center}
-\includegraphics[width=0.38\textwidth]{Wikipedia.png}
-\end{center}
-
-\medskip
+The Wikimedia Foundation hosts many wiki projects in many languages using its MediaWiki application. These wikis all have the same, simple ethos -- information is free. Notoriously, any anonymous amateur can contribute and there is no guarantee that information is either correct, complete or legal. 
 
 But surprisingly the concept works and the flagship project, Wikipedia, is a huge success. There are many editors making small contributions and a few who spend hours and hours editing. Minor errors are easily fixed, articles are continually kept up to date, and an army of volunteers check for vandalism and enforce standards. Copyright issues are dealt with, facts are checked and malicious contributors blocked. Wikipedia has readable and useful articles covering many more topics and in more depth than any paper encyclop\ae dia.
 
 \subsection{\LaTeX\ and MediaWiki}
 The MediaWiki software supports \LaTeX. It uses a limited subset of \AmS-\LaTeX\ generating either PNG images or simple HTML mark-up, depending on user preferences and the complexity of the expression.
 
-In MediaWiki, \LaTeX\ is enclosed within the tags \texttt{<math>} and \texttt{</math>}; there is a button to insert these into the edit box. So a simple equation, such as Euler's formula, would be entered as
+\begin{center}
+\includegraphics[width=0.32\textwidth]{Wikipedia.png}
+\end{center}
+
+\medskip
+
+In MediaWiki, \LaTeX\ commands are enclosed within the tags \texttt{<math>} and \texttt{</math>}; there is a button to insert these into the edit box. So a simple equation, such as Euler's formula, would be entered as
 \begin{center}
 \texttt{<math>e\^\{i\textbackslash pi\} + 1 = 0</math>}
 \end{center}
@@ -565,7 +583,7 @@ Equations are not automatically numbered, and the \texttt{align*} environment is
 \subsection{Wikibooks}
 Wikipedia has several sister projects and Wikibooks is one of the more useful of these. Whereas Wikipedia hosts many encyclop\ae dic articles, Wikibooks hosts fewer, longer articles or books, with a more connected narrative and chapters that would normally be read in order. Each Wikibook aims to be a definitive reference work -- though few achieve this.
 
-The Wikipedia article on \LaTeX\ is short and covers only a few subjects such as the history of \LaTeX\ and licensing issues. But in Wikibooks, the \LaTeX\ book has over 30 chapters (or pages) and appendices. Some of these are substantital and considered ``complete'', others are bare stubs. The chapters cover various subjects including tables, graphics, indexing and maths environments. There is a small index and a glossary and contains material both for the beginner and the expert. Wikipedia concentrates on the \textit{why} and Wikibooks on the \textit{how}.
+The Wikipedia article on \LaTeX\ is short and covers only a few subjects such as the history of \LaTeX\ and licensing issues. But in Wikibooks, the \LaTeX\ book has over 30 chapters (or pages) and appendices. Some of these are substantial and considered ``complete'', others are bare stubs. The chapters cover various subjects including tables, graphics, indexing and maths environments. There is a small index and a glossary and contains material both for the beginner and the expert. Wikipedia concentrates on the \textit{why} and Wikibooks on the \textit{how}.
 
 Other sister projects include Wiktionary, a dictionary, which ultimately aims to define all words in all languages. Wikiversity is a ``university'', which aims to have learning resources such as courses and tests, but has only a limited amount of material on \LaTeX.
 
@@ -573,28 +591,27 @@ Other sister projects include Wiktionary, a dictionary, which ultimately aims to
 The Wikibook on \LaTeX\ is a featured book. Out of the thousands of Wikibooks, less than 70 are featured. A random selection of featured books appears on the front page of Wikibooks. Featured books have an exceptionally high quality, lots of content and are well-formatted. \LaTeX\ was nominated in April 2007, garnered seven supporting votes and achieved featured status in May 2007. 
 
 \begin{center}
-\includegraphics[width=0.40\textwidth]{Wikibooks-logo-en-bw.png}
+\includegraphics[width=0.35\textwidth]{Wikibooks-logo-en-bw.png}
 \end{center}
 
 The \LaTeX\ book is listed as the 4\textsuperscript{th} most popular Wikibook. Books are ranked by their most popular page, which for \LaTeX\ is the front page -- the contents page. This page averaged over 1000 hits per day over a sample period in 2008. Several other pages (or chapters) from this book also made it into the top 20.
 
-Wikibooks, unlike most of the other wiki projects, has this year introduced reviewed pages. Reviewing assesses pages with regard to readability, accuracy and depth. A reviewed page is considered to be a stable version of that page. Reviewing can only be carried out by ``editors''. Editor status is automatically granted to contributors who have met various criteria such as having made sufficient edits and having a confirmed email address. All pages need to be reviewed, and re-reviewed if changed. In the \LaTeX\ Wikibook many pages still require to be reviewed.
+Wikibooks, unlike most other wiki projects, has this year introduced reviewed pages. Reviewing assesses pages with regard to readability, accuracy and depth. A reviewed page is considered to be a stable version of that page. Reviewing can only be carried out by ``editors''. Editor status is automatically granted to contributors who have met various criteria such as having made sufficient edits and having a confirmed email address. All pages need to be reviewed, and re-reviewed if changed. In the \LaTeX\ Wikibook many pages still require to be reviewed.
 
 \subsection{Conclusion}
-All wiki content must be seen as a work-in-progress. If you don't like it - you can fix it or improve it or start again from scratch. The \LaTeX\ Wikibook has several small chapters which need to be expanded; other chapters need to be enhanced, and more chapters could easily be added. There also two very short and incomplete Wikibooks on \TeX.
+All wiki content must be seen as a work-in-progress. If you don't like it - you can fix it or improve it or start again from scratch. The \LaTeX\ Wikibook has several small chapters which need to be expanded; other chapters need to be enhanced, and more chapters could easily be added. There are also two very short and incomplete Wikibooks on \TeX.
 
 In conclusion, the \LaTeX\ Wikibook is a reasonably good online resource, and one that can only get better, especially with our support.
 
 \subsection{Links}
 \begin{description}
-  \item[\LaTeX\ Wikibook:]                       \hfill \\ \url{http://en.wikibooks.org/wiki/LaTeX}
-  \item[\TeX\ Wikibook:]                         \hfill \\ \url{http://en.wikibooks.org/wiki/TeX}
-  \item[\TeX\ for the Impatient Wikibook:]       \hfill \\ \url{http://en.wikibooks.org/wiki/TeX_for_the_Impatient}
-  \item[Wikibooks guide to reviewing pages:]     \hfill \\ \url{http://en.wikibooks.org/wiki/Using_Wikibooks/Reviewing_Pages}
-  \item[Wikpedia article on \LaTeX:]             \hfill \\ \url{http://en.wikipedia.org/wiki/LaTeX}
-  \item[Wikipedia help on displaying formul\ae:] \hfill \\ \url{http://en.wikipedia.org/wiki/Help:Displaying_a_formula}
+  \item[\LaTeX\ Wikibook:]                       \hfill \\ \href{http://en.wikibooks.org/wiki/LaTeX}{en.wikibooks.org/wiki/LaTeX}
+  \item[\TeX\ Wikibook:]                         \hfill \\ \href{http://en.wikibooks.org/wiki/TeX}{en.wikibooks.org/wiki/TeX}
+  \item[\TeX\ for the Impatient Wikibook:]       \hfill \\ \href{http://en.wikibooks.org/wiki/TeX_for_the_Impatient}{en.wikibooks.org/wiki\slash TeX\_for\_the\_Impatient}
+  \item[Wikibooks guide to reviewing pages:]     \hfill \\ \href{http://en.wikibooks.org/wiki/Using_Wikibooks/ Reviewing_Pages}{en.wikibooks.org/wiki/Using\_Wikibooks\slash Reviewing\_Pages}
+  \item[Wikpedia article on \LaTeX:]             \hfill \\ \href{http://en.wikipedia.org/wiki/LaTeX}{en.wikipedia.org/wiki/LaTeX}
+  \item[Wikipedia help on displaying formul\ae:] \hfill \\ \href{http://en.wikipedia.org/wiki/Help:Displaying_a_formula}{en.wikipedia.org/wiki\slash Help:Displaying\_a\_formula}
 \end{description}
-$\blacksquare$
 
 % ----------------------------------------------------------------------------------------
 \section{The Hound Answers}
@@ -624,12 +641,12 @@ $\blacksquare$
 
 % -----------------------------------------------------------------------------------
 \section{Contributions}
-\noindent All contributions should be sent to:
+\noindent All contributions to \BV\ should be sent to:
 \begin{center}
 \href{mailto:baskerville@uk.tug.org}{baskerville@uk.tug.org}
 \end{center}
 
-Articles on any area of \TeX, its friends, \ukt\ or related topics are very welcome: the Committee is particularly keen to publish articles with a UK \textit{flavour}. Send in your comments on this issue; your suggestions, letters, thoughts, tips and hints, articles, jokes, questions, requests for help, jobs – anything relevant will be considered for publication. Also considered for publication are cartoons and puzzles. $\blacksquare$
+Articles on any area of \TeX, its friends, \ukt\ or related topics are very welcome: the Committee is particularly keen to publish articles with a UK \textit{flavour}. Send in your comments on this issue; your suggestions, letters, thoughts, tips and hints, articles, jokes, questions, requests for help, jobs – anything relevant will be considered for publication. Cartoons and puzzles will also be considered for publication.
 
 % The deadline for the next issue is [\textbf{DATE}]. 
 
