@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{article}
+
+% \usepackage{multicol}
+% \usepackage{pifont}  % for a tick
+% \usepackage{hyperref}             % For hyperlinks
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{textcomp}
+
+% -----------------------------------------------------------------------
+\begin{document}
+
+\section{The Alphabet}
+Writing is one of man's greatest inventions. 
+
+
+Arabic / Hebrew: alphabets - Greek, Cyrillic, Devanagari
+Runes, Braille, Morse code
+syllabary
+pictograph
+glyph
+phonetic alphabet
+accents / diacritics
+
+\section{Greek -- The Basics}
+The Greeks took their alphabet from the Phoenicians. MORE
+
+The Greeks were famous mathematicians. They had no separate symbols (glyphs) for numbers so in common with other alphabets, used letters. Today's mathematicians still use Greek, as such the Greek alphabet is a standard feature of \TeX. The Greek alphabet is by far the most important for mathematicians, scientists and engineers.
+
+Upper case variants of the letters are produced by using an initial upper case letter. For example \texttt{\$$\backslash$Gamma}\$ produces $\Gamma$.
+
+\medskip
+
+\begin{tabular}{ccp{4cm}}
+\toprule
+Lower case & Upper case & \LaTeX \\
+\midrule
+$\alpha$   & A          & \texttt{\$$\backslash$alpha\$} \\
+$\beta$    & B          & \texttt{\$$\backslash$beta\$}  \\
+$\gamma$   & $\Gamma$   & \texttt{\$$\backslash$gamma\$} \\
+$\delta$   & $\Delta$   & \texttt{\$$\backslash$delta\$} \\
+$\epsilon$, $\varepsilon$ & E          & \texttt{\$$\backslash$epsilon\$},  \texttt{\$$\backslash$varepsilon\$} \\
+$\zeta$    & Z          & \texttt{\$$\backslash$zeta\$} \\
+$\eta$     & H          & \texttt{\$$\backslash$eta\$} \\
+$\theta$, $\vartheta$ & $\Theta$   & \texttt{\$$\backslash$theta\$}, \texttt{\$$\backslash$vartheta\$} \\
+$\iota$    & I          & \texttt{\$$\backslash$iota\$} \\
+$\kappa$   & K          & \texttt{\$$\backslash$kappa\$} \\
+$\lambda$  & $\Lambda$  & \texttt{\$$\backslash$lambda\$} \\
+$\mu$      & M          & \texttt{\$$\backslash$mu\$} \\
+$\nu$      & N          & \texttt{\$$\backslash$nu\$} \\
+$\xi$      & $\Xi$      & \texttt{\$$\backslash$xi\$} \\
+o          & O          & \texttt{o} \\
+$\pi$, $\varpi$  & $\Pi$ & \texttt{\$$\backslash$pi}\$, \texttt{\$$\backslash$varpi\$} \\
+$\rho$, $\varrho$ & P          & \texttt{\$$\backslash$rho\$}, \texttt{\$$\backslash$varrho\$} \\
+$\sigma$, $\varsigma$   & $\Sigma$   & \texttt{\$$\backslash$sigma\$}, \texttt{\$$\backslash$varsigma\$} \\
+$\tau$     & T          & \texttt{\$$\backslash$tau\$} \\
+$\upsilon$ & Y          & \texttt{\$$\backslash$upsilon\$} \\
+$\phi$, $\varphi$  & $\Phi$     & \texttt{\$$\backslash$phi\$}, \texttt{\$$\backslash$varphi\$} \\
+$\chi$     & X          & \texttt{\$$\backslash$chi\$} \\
+$\psi$     & $\Psi$     & \texttt{\$$\backslash$psi\$} \\
+$\omega$   & $\Omega$   & \texttt{\$$\backslash$omega\$} \\
+\bottomrule
+\end{tabular}
+
+\medskip
+
+The letter omicron is the same as the Latin \texttt{o} and so has no special code. There is a variant of kappa found in the \texttt{amssymb} package: $\varkappa$ (\texttt{\$$\backslash$varkappa}\$)
+
+A couple of letters can be found in the \texttt{textcomp} and \texttt{gensymb} package:
+
+\begin{tabular}{ccc}
+Symbol   & textcomp & gensymb \\
+\textohm & $\backslash$textohm & $\backslash$ohm \\
+\textmu  & $\backslash$textmu  & $\backslash$micro 
+\end{tabular}
+
+This version of \textit{mu} is used for the SI prefix micro- for $10^{-6}$. For example, the symbol for a micron is \texttt{\textmu m}.
+
+Mathematics uses variants of \textit{sigma} and \textit{pi} as operators, such that in display mode subscripts and superscripts are placed beneath or above the letters respectively. These symbols are found in the \texttt{amssymb} package:
+
+\begin{tabular}{cc}
+$\displaystyle \sum_{i=0}^{n}$  & \texttt{\$$\backslash$sum\_\{i=0\}\^{}n\$} \\
+$\displaystyle \prod_{i=0}^{n}$ & \texttt{\$$\backslash$prod\_\{i=0\}\^{}n\$}
+\end{tabular}
+
+A couple of symbols are used upside-down, and are found in the \texttt{amssymb} package:
+
+\begin{tabular}{ccp{4cm}}
+$\mho$   & \texttt{\$$\backslash$mho\$}   & This is ohm spelt backwards, and is an unofficial symbol for the siemens. \\
+$\nabla$ & \texttt{\$$\backslash$nabla\$} & This symbol is the \textit{del} operator in mathematics.
+\end{tabular}
+
+There are some obsolete letters:
+
+\begin{tabular}{ccp{4cm}}
+\toprule
+Lower case & \LaTeX \\
+\midrule
+$\digamma$ & \texttt{\$$\backslash$digamma\$} amssymb \\
+\bottomrule
+\end{tabular}
+
+
+	Digamma 		Qoppa
+	San 		Sampi
+
+Other characters
+	Stigma 		Sho
+	Heta
+
+\end{document}
+
+
+
+
+

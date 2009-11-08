@@ -1,0 +1,45 @@
+\begin{thebibliography}{1}
+
+\bibitem{Bauke2007}
+Heiko Bauke.
+\newblock {\textsf{fancyunits}}, 2007.
+\newblock
+  \url{http://www.mpi-hd.mpg.de/personalhomes/bauke/LaTeX/Tips_und_Tricks/fanc%
+yunits/index.php}.
+
+\bibitem{BIPM2008}
+{Conf\'erence G\'en\'erale des Poids et Mesures}.
+\newblock {T}he {I}nternational {S}ystem of {U}nits ({SI}), 2008.
+\newblock \url{http://www.bipm.org/en/si/}.
+
+\bibitem{Els2006}
+D.~N.~J. Els.
+\newblock {T}he { \textsf{SIstyle}} package.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/sistyle}, 2006.
+
+\bibitem{Happel2005}
+Patrick Happel.
+\newblock {\textsf{unitsdef}}---{T}ypesetting units with {\LaTeXe}.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/unitsdef}, 2005.
+
+\bibitem{Harders2008}
+Harald Harders.
+\newblock {T}he {\textsf{numprint}} package.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/numprint}, 2008.
+
+\bibitem{Heldorn2007}
+Marcel Heldorn.
+\newblock {T}he { \textsf{SIunits}} package.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/siunits}, 2007.
+
+\bibitem{NIST2008}
+{National Institute of Standards and Technology}.
+\newblock {I}nternational {S}ystem of {U}nits from {NIST}, 2008.
+\newblock \url{http://physics.nist.gov/cuu/Units/index.html}.
+
+\bibitem{Reichert1998}
+Alex Reichert.
+\newblock {\textsf{units.sty}}---{\textsf{nicefrac.sty}}.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/units}, 1998.
+
+\end{thebibliography}

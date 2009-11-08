@@ -1,0 +1,334 @@
+\documentclass[a4paper,twoside,twocolumn]{article}
+
+\usepackage[small]{cwpuzzle}
+\usepackage{supertabular}         % Crossword clues to split over pages
+\usepackage{rotating}             % For the inverted crossword answers
+\usepackage{booktabs}             % For tables with TOPRULE, MIDRULE and BOTTOMRULE
+\usepackage{graphicx}             % For various illustrations
+\usepackage{wrapfig}
+\usepackage{eurosym}
+\usepackage{hyperref}             % For hyperlinks
+\usepackage{url} % Used in JW's bin files
+
+% #----------------------------------------------------------------------------------
+% Baskerville Definitions
+
+\def \ukt {UK-TUG}
+
+\newcommand{\BV}{\textit{Baskerville}}
+\newcommand{\ISSUE}{10.2}
+\newcommand{\ISSUEDATE}{August 2009}
+
+% Used for author name at top of article
+\newcommand{\AUTHOR}[1]
+{
+\textsf{#1} \vspace{1em}
+}
+
+\hyphenation{Bas-ker-ville}
+
+% -----------------------------------------------------------------------------------
+\font\manual=manfnt
+\newcommand{\MF}{{\manual META}\-{\manual FONT}}
+\newcommand{\MP}{\texttt{META}\-\texttt{POST}}
+
+% -----------------------------------------------------------------------------------
+% Heading for pages after the first page.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% One heading per page, to the margin
+\fancyhead[LO]{}
+\fancyhead[LE]{\BV}                          
+\fancyhead[RO]{\textit{Volume 10, Number 2}}
+\fancyhead[RE]{}
+\cfoot{-\thepage-}
+
+\usepackage{bibunits}
+
+% -----------------------------------------------------------------------------------
+% Defintions and packages for "SIunitX" article.
+%\usepackage{natbib}
+\usepackage{siunitx} %,url}
+\providecommand*\CTAN{\textsc{CTAN}}
+\providecommand*\cs[1]{\texttt{\char`\\#1}}
+\providecommand*\pkg[1]{\textsf{#1}}
+\providecommand*\opt[1]{\texttt{#1}}
+
+% -----------------------------------------------------------------------------------
+% Defintions and packages for "ChemTex" article.
+\usepackage{chemstyle,notes2bib,mciteplus} %} %rsc,siunitx,ur}
+\usepackage[version=3]{mhchem}
+\providecommand*\acro[1]{\textsc{#1}}
+\providecommand*\BibTeX{\acro{Bib}\kern-.08em\relax\TeX}
+\providecommand*\file[1]{\texttt{#1}}
+
+% ============================================================================================
+\begin{document}
+
+\defaultbibliographystyle{plain}
+
+% -----------------------------------------------------------------------------------
+% PDF properties
+% (Better here than in usepacakge because the latter loses spaces between words.)
+\hypersetup{
+  pdfauthor  = {Edited by Jonathan Webley},
+  pdftitle   = {Baskerville \ISSUE},
+  pdfsubject = {The Annals of the UK-TeX Users' Group}
+}
+
+% -----------------------------------------------------------------------------------
+% Define a title page.
+\begin{titlepage}
+\begin{center}
+
+\vspace{2cm}
+
+\includegraphics[width=0.95\textwidth]{lion.png} \\ [2cm]
+
+\textsc{\Large The Annals of the UK-\TeX\ Users' Group} \\[0.2cm]
+{\large \href{http://uk.tug.org/}{uk.tug.org}} \\[0.2cm]
+{\large ISSN 1354-5930}
+
+\vfill
+
+% Bottom of the page
+{\large
+\begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}} l c r }
+            & Edited by                 &             \\
+Vol. \ISSUE & Jonathan \textsc{Webley}  & \ISSUEDATE  \\
+\end{tabular*}}
+
+\end{center}
+
+\end{titlepage}
+
+% -----------------------------------------------------------------------------------
+% \setcounter{tocdepth}{1}  % Sections only. 2 turns on sub-sections which throws a new page.
+\tableofcontents
+
+% ----------------------------------------------------------------------------------------
+\vspace{0.5cm}
+\noindent \textbf{\ukt\ Committee 2009}
+
+\begin{itemize}
+   \setlength{\parskip}{1pt} % Scrunch up to fit on first column
+   \item Jonathan Fine (Chair)
+   \item David Crossland (Secretary)
+   \item David Saunders (Treasurer)
+   \item Joseph Wright (Membership Secretary and Webmaster)
+   \item John Trapp (Training Officer)
+   \item Jonathan Underwood
+   \item Charles Goldie
+   \item Simon Dales
+   \item Jonathan Webley (Baskerville Editor, co-opted)
+\end{itemize}
+The  committee can be contacted at:
+\begin{center}
+\href{mailto:uktug-committee@uk.tug.org}{uktug-committee@uk.tug.org}
+\end{center}
+
+% ----------------------------------------------------------------------------------------
+\section{Editorial}
+Welcome to my second edition of \BV. \textbf{EXPAND}
+
+\hfill Jonathan Webley
+
+\hfill \ \href{mailto:baskerville@uk.tug.org}{baskerville@uk.tug.org}
+
+% ----------------------------------------------------------------------------------------
+\section{Events}
+
+% ----------------------------------------------------------------------------------------
+\subsection{Euro\TeX\ 2009 \& 3rd Con\TeX t Meeting}
+
+\begin{wrapfigure}{R}{0.2\textwidth}
+    \vspace{-10pt}
+    \includegraphics[width=1.0\textwidth]{ntglogo_bw3.png}
+    \vspace{-10pt}
+\end{wrapfigure}
+
+Euro\TeX\ 2009 takes place this year in the Hague, the Netherlands, on 31 August through 4 September 2009, in parallel with the third Con\TeX t conference. The conference will focus on educational uses of \TeX, such as manuals,  presentations and teaching materials, but of course other \TeX\ and \MP\ related topics will be covered as well.  The conference will be in English.
+
+Registration has now closed but proposals for talks and tutorials are still required.
+
+The official website is:
+\begin{center}
+ \href{http://www.ntg.nl/EuroTeX2009/index.html}{www.ntg.nl/EuroTeX2009}
+\end{center}
+
+% ----------------------------------------------------------------------------------------
+\subsection{Math Content Workshop -- Milton Keynes, UK}
+There will be a one-day technical workshop on mathematical content in electronic media, to take place at The Open University, Milton Keynes on Wednesday 9 September. The workshop will have three main themes:
+\begin{enumerate}
+	\item Content related technical problems in supporting e-Learning in mathematics.
+	\item Standards related to digitisation of mathematics research literature.
+	\item Formulas and equations in otherwise non-mathematical content.
+\end{enumerate}
+
+Attendance is limited to about 30, and there are funds for travel and accommodation. This workshop is funded by The Open University (OU) and the Joint Information Systems Committe (JISC)
+
+For more information, and to express an interest in attending, visit:
+\begin{center}
+ \href{http://groups.google.com/group/uk-math-content-2009/web/home}
+       {http://groups.google.com/group/uk-math-content-2009/web/home}
+\end{center}
+      
+% ----------------------------------------------------------------------------------------
+\subsection{GuITmeeting 2009}
+
+\textbf{LOGO?}
+
+GuIT, the Italian TUG, will be holding GuITmeeting 2009 in Pisa on Saturday, 17 October 2009 at Scuola Superiore Sant'Anna. GuITmeeting 2009 is the sixth edition of the annual conference about \TeX\ and \LaTeX\ organized by GuIT.
+More information about GuITmeeting 2009 and the submission of papers can be found at:
+\begin{center}
+ \href{http://www.guit.sssup.it/guitmeeting/2009/2009.en.php}{http://www.guit.sssup.it/guitmeeting/2009}
+\end{center}
+
+% ----------------------------------------------------------------------------------------
+\section{News}
+\subsection{The \TeX\ FAQ}
+\emph{The UK List of \TeX\ Frequently Asked Questions on the Web} was updated in June this year and now contains 438 questions (and answers). The FAQ is maintained by Robin Fairbains and is for English-speaking users of \TeX. The questions cover a wide range of topics, but the actual typesetting issues are mostly covered from the viewpoint of a \LaTeX\ user. 
+
+The FAQ can be found at:
+\begin{center}
+\href{http://www.tex.ac.uk/faq}{http://www.tex.ac.uk/faq}
+\end{center}
+
+Any errors, corrections and potential new topics should be sent to:
+\begin{center}
+\href{mailto:faq-devel@tex.ac.uk}{faq-devel@tex.ac.uk}
+\end{center}
+
+
+% ----------------------------------------------------------------------------------------
+\subsection{MathTran}
+
+MathTran is a website that can be used to create, store and translate mathematical content. It translates mathematics entered using \TeX\ notation into images for inclusion in web pages and on emails. The latest version now allows users with an account to save their formulas.
+
+MathTran is funded by the OU and JISC. The website can be found at:
+\begin{center}
+\href{http://www.mathtran.org/}{http://www.mathtran.org}
+\end{center}
+
+
+
+% ----------------------------------------------------------------------------------------
+% \newpage
+\section{The Hound}
+
+\AUTHOR{Jonathan Webley}
+
+% \vspace{3ex}
+
+\begin{Puzzle}{11}{11}
+|[1]C |E |R |I |[2]S |E |* |[3]A |[4]S |K |[5]S |.
+|A |* |* |* |O |* |* |* |N |* |U |.
+|[6]S |A |[7]C |* |[8]A |S |[9]S |U |A |G |E |.
+|K |* |E |* |P |* |U |* |K |* |D |.
+|[10]S |H |A |K |O |* |[11]P |I |E |C |E |.
+|* |* |S |* |[12]P |I |E |* |P |* |* |.
+|[13]S |T |E |L |E |* |[14]R |A |I |N |[15]Y |.
+|H |* |F |* |R |* |H |* |T |* |O |.
+|[16]A |N |I |M |A |T |E |* |[17]S |O |U |.
+|G |* |R |* |* |* |R |* |* |* |T |.
+|[18]S |M |E |W |* |[19]P |O |T |A |S |H |.
+\end{Puzzle}
+
+\noindent \textbf{Across} \\[2ex]
+{\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r p{6.7cm}}
+ \textbf{1} & Inside the saucer, I see, is cherry-coloured. (6) \\
+ \textbf{3} & Requests are listed in the task sheet. (4) \\
+ \textbf{6} & I bought a bag in the Trossachs. (3) \\
+ \textbf{8} & Sadly, use a gas mask to relieve pain. (7) \\
+ \textbf{10} & Large hat, squashed, has okay from me. (5) \\
+ \textbf{11} & Species, drowning without a ship, have no part. (5) \\
+ \textbf{12} & This type of chart sounds like 3.14159 \dots (3) \\
+ \textbf{13} & There's an obelisk of steel, rusted. (5) \\
+ \textbf{14} & Lost in Iran, unknown at the end, wet. (5) \\
+ \textbf{16} & Quicken the best, but meant badly. (7) \\
+ \textbf{17} & So you want a coin? (3) \\
+ \textbf{18} & Duck mews annoyingly. (4) \\
+ \textbf{19} & Ah, the post was mislaid because it contains potassium. (6) \\
+\end{tabular}}
+
+\noindent \textbf{Down} \\[2ex]
+{
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r p{6.7cm}}
+ \textbf{1} & Kegs for 100 demands. (5) \\
+ \textbf{2} & Sapper, with a double-O rating, watches a show. (4,5) \\
+ \textbf{4} & A skin pest disfigures in dangerous places. (5,4) \\
+ \textbf{5} & European sounds like leather. (5) \\
+ %\end{tabular}
+ %\begin{tabular}{r p{6.7cm}}
+ \textbf{7} & You! Extinguish the flames and stop fighting. (9) \\
+ \textbf{9} & Robin is found washed up on pure shore. (9) \\
+ \textbf{13} & Cormorants burp gas. Sh! (5) \\
+ \textbf{15} & Why art thou so young? (5) \\
+\end{tabular}}
+
+% ----------------------------------------------------------------------------------------
+\section{Stub}
+
+\AUTHOR{Jonathan Webley}
+
+% ----------------------------------------------------------------------------------------
+
+\input{siunitx}
+\input{ChemTeX}
+
+% ----------------------------------------------------------------------------------------
+\section{The Hound Answers}
+
+\noindent \textbf{Across} \\
+\begin{turn}{180} 
+ 16. animate,
+ 17. sou,
+ 18. smew,
+ 19. potash
+\end{turn} \\
+\begin{turn}{180}
+ 10. shako,
+ 12. pie,
+ 13. stele,
+ 14. rainy,
+ \end{turn} \\
+\begin{turn}{180}
+ 1. cerise,
+ 3. asks,
+ 6. sac,
+ 8. assuage,
+ 11. piece,
+\end{turn} \\
+
+\noindent \textbf{Down} \\
+\begin{turn}{180}
+15. youth
+\end{turn} \\
+\begin{turn}{180}
+5. suede,
+7. ceasefire,
+9. superhero,
+13. shags,
+\end{turn} \\
+\begin{turn}{180}
+1. casks,
+2. soap opera,
+4. snake pits,
+\end{turn}
+
+% -----------------------------------------------------------------------------------
+\section{Contributions}
+\noindent All contributions to \BV\ should be sent to the editor at:
+\begin{center}
+\href{mailto:baskerville@uk.tug.org}{baskerville@uk.tug.org}
+\end{center}
+
+Articles on any area of \TeX or its friends, \ukt\ or related topics are very welcome. The Committee is particularly keen to publish articles with a UK \textit{flavour}. Send in your comments on this issue; your suggestions, letters, thoughts, tips and hints, articles, jokes, questions, requests for help, jobs, cartoons or puzzles -- anything relevant will be considered for publication.
+
+The deadline for the next issue is [\textbf{DATE}]. 
+
+\end{document}
+

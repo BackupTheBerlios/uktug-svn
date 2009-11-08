@@ -1,0 +1,236 @@
+\section{\pkg{siunitx}: A \LaTeX\ Swiss army knife for units}
+\begin{bibunit}
+\AUTHOR{Joseph Wright}
+
+%\begin{abstract}
+\subsection{Introduction}
+The \pkg{siunitx} package is a complete system for typesetting
+units in \LaTeX.  It provides a large number of settings,
+allowing the user complete control of the output for a fixed
+input.  The package grew out of \pkg{SIunits} and
+\pkg{SIstyle}, but covers many additional areas.  This article
+provides a brief overview of why the new package was written
+and some of its key features.
+%\end{abstract}
+
+\subsection{Background}
+
+In November 2007, a seemingly simple query about a bug in the
+\pkg{SIunits} package \cite{Heldorn2007} was posted to
+\texttt{comp.text.tex}. I suggested a bug fix, but on
+contacting the author of \pkg{SIunits} found he had no time for
+further maintenance.  I therefore found myself somewhat
+accidentally as the new package maintainer.  After fixing the
+bug at hand, I decided to have a good look over the code, and
+to ask for suggestions for improvements.  It soon became very
+clear that unit support in \LaTeX\ needed serious attention,
+and that tweaks to \pkg{SIunits} would not be enough.  At that
+point, \pkg{siunitx} was born.
+
+\subsection{Units in print}
+
+The need for packages to control printing units is not
+immediately obvious.  However, the existence of \pkg{SIunits},
+\pkg{SIstyle} \cite{Els2006}, \pkg{fancyunits}
+\cite{Bauke2007}, \pkg{unitsdef} \cite{Happel2005} and
+\pkg{units} \cite{Reichert1998} attests to the desire to go
+beyond direct input of units (and values).
+
+Units are important, and without clear rules problems almost
+automatically arise.  There are therefore internationally
+agreed units: the \emph{Syst\`eme International d'Unit\'es}
+\cite{BIPM2008}, usually referred to as SI units.  To go with
+the agreed units are a set of rules on how to print both units
+and the associated values; the National Institute of Standards and Technology (\textsc{nist}) have a good set of
+guidelines for authors \cite{NIST2008}.  Doing this properly
+and consistently is much better achieved using pre-build
+macros, rather than checking every single use by hand.
+
+At the same time, different publishers have their own conventions.
+These do not always follow the `official' rules, and authors
+do not want to change their source for every different use.
+This again makes the strong case for using adjustable macros
+for writing units; changing the style is then only a question
+of altering the definition.
+
+Finally, values as well as units have rules, and these rules
+vary depending on publisher and country.  The \pkg{numprint}
+package \cite{Harders2008} provides a range of tools to
+automatically format numbers, to match the desired output
+style.  It also includes basic abilities to include units with
+these numbers.
+
+\subsection{Enter \pkg{siunitx}}
+
+Given the existing range of packages, the question arises `why
+another package?'  The answer is that, although there are
+several other packages, none covers everything. For example,
+\pkg{SIunits} provides macros such as \cs{metre} to maintain
+consistency, but is poor on control of numbers, whereas
+\pkg{SIstyle} is stronger on numbers but does not provide unit
+macros.  So a combined package, which can do everything, seemed
+desirable.  Many of the ideas that I and others had were also
+well beyond anything available in the existing solutions.  That
+said, a lot of the internals of \pkg{siunitx} is taken
+more-or-less verbatim from the existing packages.  The
+\pkg{numprint} system has been extensively recycled here; most
+of the number-interpreting system is based on the
+\pkg{numprint} method.  Indeed, while the initial aim of the
+new package was to deal primarily with \emph{units}, much of
+the work I have undertaken has been concerned with
+\emph{numbers}.
+
+The design of \pkg{siunitx} is intended to be flexible.  Almost
+everything is made available as an option, and given the number
+of options, key--value controls were the only way to do this.
+The package documentation covers (hopefully) all of them, but a
+few examples here will illustrate the ideas.
+
+\subsubsection{Some basics}
+
+The basic macro of the package is \cs{SI}.  This takes a unit
+and a value, and typesets them together.  The font used for
+this is controlled, and the space between them cannot be
+broken.  Thus for example \verb|\SI{10}{\metre}| gives
+`\SI{10}{\metre}'.  The second argument is a unit, which can
+be given as a series of macros, or can be literal text:
+\verb|\SI{2}{N.m^2}| gives `\SI{2}{N.m^2}'.  Here, there is
+no need to instruct the package to use maths mode for
+superscripts: this is handled automatically.
+
+Both the number and unit parts of the input can be used
+independently, with macros \cs{num} and \cs{si}, respectively.
+The \cs{num} macro can interpret and format a wide range of
+numerical input.  So \verb|\num{1e2,3}| gives `\num{1e2,3}'
+(when using U.K.~settings, at least).  As with the rest of the
+package, the way that numbers are interpreted can be adjusted
+by setting the appropriate package options.  For angles, the
+\cs{ang} macro is available; it can work with angles as decimal
+and arcs: \verb|\ang{1.23}| and  \verb|\ang{1;2;3}| give
+`\ang{1.23}' and `\ang{1;2;3}', respectively.
+
+Package options can be set in three ways.  As with most
+packages, load-time options are recognised.  There is also a
+\cs{sisetup} macro, which adjusts settings for all subsequent
+input.  Finally, all of the user macros accept an optional
+first argument; this allows changes for a specific item only.
+
+\subsubsection{The unit processor}
+
+One of the new ideas in \pkg{siunitx} is the unit processor.
+This takes macro-based units, and can reformat them depending
+on the desired output.  `Out of the box',
+\verb|\SI{30}{\metre\per\second}| gives
+`\SI{30}{\metre\per\second}', whereas if we set the option
+\opt{per=slash}, the same input gives
+`\SI[per=slash]{30}{\metre\per\second}'. This can be extended
+further, allowing the interpretation of powers, including
+reciprocals.  Thus, given the input
+\verb|\SI{20}{\per\Square\second}|, the result can be
+`\SI{20}{\per\Square\second}',
+`\SI[per=slash]{20}{\per\Square\second}',
+`\SI[per=frac]{20}{\per\Square\second}' or
+`\SI[per=frac,fraction=nice]{20}{\per\Square\second}',
+depending on the options set.
+
+\subsubsection{Special effects}
+
+A lot of work has gone into making more complex ideas available
+for users of \pkg{siunitx}.  Thus the idea of `repeated'
+units is easily handled:
+\begin{verbatim}
+\SI{1 x 2 x 3}{\metre}
+\end{verbatim}
+yields `\SI{1x2x3}{\metre}', for example.  Setting option
+\opt{repeatunits=false}, the alternative (and not entirely
+desirable) `\SI[repeatunits=false]{1x2x3}{\metre}' results.
+
+Similarly, the conversion of angles between decimal and
+degree--minute--second format is possible.  So
+\verb|\ang{1.23}| normally gives the expected `\ang{1.23}';
+setting \opt{angformat=arc} gives the alternative form
+`\ang[angformat=arc]{1.23}'.
+
+In many parts of the natural sciences, errors in physical
+measurements are important.  Two ways are common for showing
+these, as a separate error part, and as a bracketed error in
+the last digit: \num[seperr]{1.23(4)} and \num{1.24(4)},
+respectively.  Using \pkg{siunitx}, both forms can result from
+the same input: \verb|\num{1.24(4)}|.  The separated form is
+obtained by setting the \opt{seperr} flag.  This works with
+exponents and units, for example:
+\begin{verbatim}
+\SI[seperr]{1.23(4)e5}{\candela}
+\end{verbatim}
+gives `\SI[seperr]{1.23(4)e5}{\candela}'.  Notice the
+automatic addition of brackets to prevent ambiguity: this is an
+adjustable package option.
+
+The final extra to highlight is the provision of a new column
+for tabular environments, the \texttt{S} column.  This brings
+the ability to use the \cs{num} macro to tables, but also
+brings control of alignment (including exponents).  A short
+example shows the effect:
+\begin{verbatim}
+\begin{table}
+  \centering
+  \begin{tabular}{cS[tabformat=3.1]}
+    \toprule
+    {Entry} & {Distance/\si{\metre}} \\
+    \midrule
+    1 & 102.3 \\
+    2 & 123.2 \\
+    3 &   2,3 \\
+    4 & 145.  \\
+    5 &   2.3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\end{verbatim}
+\begin{table}
+  \centering
+  \begin{tabular}{cS[tabformat=3.1]}
+    \toprule
+    {Entry} & {Distance/\si{\metre}} \\
+    \midrule
+    1 & 102.3 \\
+    2 & 123.2 \\
+    3 &   2,3 \\
+    4 & 145.  \\
+    5 &   2.3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Here, the contents of the \texttt{S} column are centred under
+the column heading.  Space is reserved for three digits before
+the decimal point, and one digit after.  Thus, while the
+decimal points are aligned they are \emph{not} at the centre of
+the column.  A range of options are provided to allow control
+of positioning in \texttt{S} columns.
+
+\subsubsection{Emulation}
+
+Replacing the existing packages raises the issue of users
+moving existing manuscripts to \pkg{siunitx}.  To aid this
+transition, emulation modes are available for all of the
+existing solutions.  This means that users of the existing
+packages can experiment with \pkg{siunitx} without needing to
+learn new default settings or input conventions.
+
+\subsection{Conclusions}
+
+This short article can only provide a flavour of the abilities
+of \pkg{siunitx}.  However, it hopefully highlights the
+possibilities made available by the new package.  The package
+documentation includes a full range of examples, with almost
+all of the package options illustrated.  I hope that I have
+covered a wide range of needs, and that \pkg{siunitx} will make
+it easier for \LaTeX\ users to get units right without working
+too hard.  Suggestions for new features are always welcome,
+particularly when they come with some interface ideas as well!
+
+\putbib[siunitx]
+\end{bibunit}
+
+%\bibliography{siunitx}
+%\bibliographystyle{unsrtnat}

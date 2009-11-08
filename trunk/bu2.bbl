@@ -1,0 +1,60 @@
+\begin{thebibliography}{10}
+
+\bibitem{Arseneau2009}
+Donald Arseneau.
+\newblock {\textsf{cite}}.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/cite}, 2009.
+
+\bibitem{Bibnote1}
+An example bibliographic note.
+
+\bibitem{Bibnote2}
+See \url {http://www.cambridgesoft.com}.
+
+\bibitem{Daly2009}
+Patrick~W. Daly.
+\newblock {N}atural {S}ciences {C}itations and {R}eferences.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/natbib}, 2009.
+
+\bibitem{Carlisle1998}
+Michael~C. Grant and David Carlisle.
+\newblock The \textsf{PSfrag} system, version 3.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/psfrag}, 1998.
+
+\bibitem{Hensel2007}
+Martin Hensel.
+\newblock {T}he {\textsf{mhchem}} {B}undle.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/mhchem}, 2007.
+
+\bibitem{Lehman2009}
+Philipp Lehman.
+\newblock {T}he {\textsf{biblatex}} package.
+\newblock Available from {\CTAN}, \url{macros/latex/exptl/biblatex}, 2009.
+
+\bibitem{Gasslein2008}
+Rolf Niepraschk and Hubert G\"a{\ss}lein.
+\newblock The \textsf{pst-pdf} package.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/pst-pdf}, 2008.
+
+\bibitem{Ohl2005}
+Thorsten Ohl.
+\newblock \textsf{mcite}: Multiple citations on one key.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/mcite}, 2005.
+
+\bibitem{Pedersen2004}
+Bj{\o}rn Pedersen.
+\newblock {T}he {\textsf{bpchem}} package.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/bpchem}, 2004.
+
+\bibitem{Schenk2006}
+Stephan Schenk.
+\newblock {T}he {\textsf{chemcopounds}} package.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/chemcompounds},
+  2006.
+
+\bibitem{Shell2008}
+Michael Shell.
+\newblock {\textsf{Mciteplus}}: {E}nhanced {M}ulticitations.
+\newblock Available from {\CTAN}, \url{macros/latex/contrib/mciteplus}, 2008.
+
+\end{thebibliography}

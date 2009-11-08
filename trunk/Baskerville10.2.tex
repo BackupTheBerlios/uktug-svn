@@ -1,0 +1,325 @@
+\documentclass[a4paper,twoside,twocolumn]{article}
+
+\usepackage[small]{cwpuzzle}
+\usepackage{supertabular}         % Crossword clues to split over pages
+\usepackage{rotating}             % For the inverted crossword answers
+\usepackage{booktabs}             % For tables with TOPRULE, MIDRULE and BOTTOMRULE
+\usepackage{graphicx}             % For various illustrations
+\usepackage{wrapfig}
+\usepackage{eurosym}
+\usepackage{hyperref}             % For hyperlinks
+\usepackage{verbatim}             % For the comment environment
+
+\usepackage{url} % Used in JW's bin files
+
+% Packages for article on Greek
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{bm}  % Bold math package for bold lowercase Greek
+\usepackage[greek,english]{babel}
+% \usepackage{fixmath}
+
+% #----------------------------------------------------------------------------------
+% Baskerville Definitions
+
+\def \ukt {UK-TUG}
+
+\newcommand{\BV}{\textit{Baskerville}}
+\newcommand{\ISSUE}{10.2}
+\newcommand{\ISSUEDATE}{October 2009}
+
+% Used for author name at top of article
+\newcommand{\AUTHOR}[1]
+{
+\textsf{#1} \vspace{1em}
+}
+
+\hyphenation{Bas-ker-ville}
+
+% -----------------------------------------------------------------------------------
+\font\manual=manfnt
+\newcommand{\MF}{{\manual META}\-{\manual FONT}}
+\newcommand{\MP}{\texttt{META}\-\texttt{POST}}
+
+\newcommand{\BS}{$\backslash$}
+
+% -----------------------------------------------------------------------------------
+% Heading for pages after the first page.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% One heading per page, to the margin
+\fancyhead[LO]{}
+\fancyhead[LE]{\BV}                          
+\fancyhead[RO]{\textit{Volume 10, Number 2}}
+\fancyhead[RE]{}
+\cfoot{-\thepage-}
+
+\usepackage{bibunits}
+%\usepackage{notes2bib}
+
+% -----------------------------------------------------------------------------------
+% Defintions and packages for "SIunitX" article.
+%\usepackage{natbib}
+\usepackage{siunitx} %,url}
+\providecommand*\CTAN{\textsc{CTAN}}
+\providecommand*\cs[1]{\texttt{\char`\\#1}}
+\providecommand*\pkg[1]{\textsf{#1}}
+\providecommand*\opt[1]{\texttt{#1}}
+
+% -----------------------------------------------------------------------------------
+% Defintions and packages for "ChemTex" article.
+\usepackage{chemstyle,notes2bib,mciteplus} %} %rsc,siunitx,ur}
+\usepackage[version=3]{mhchem}
+\providecommand*\acro[1]{\textsc{#1}}
+\providecommand*\BibTeX{\acro{Bib}\kern-.08em\relax\TeX}
+\providecommand*\file[1]{\texttt{#1}}
+
+% ============================================================================================
+\begin{document}
+
+\defaultbibliographystyle{plain}
+
+% -----------------------------------------------------------------------------------
+% PDF properties
+% (Better here than in usepacakge because the latter loses spaces between words.)
+\hypersetup{
+  pdfauthor  = {Edited by Jonathan Webley},
+  pdftitle   = {Baskerville \ISSUE},
+  pdfsubject = {The Annals of the UK-TeX Users' Group}
+}
+
+% -----------------------------------------------------------------------------------
+% Define a title page.
+\begin{titlepage}
+\begin{center}
+
+\vspace{2cm}
+
+\includegraphics[width=0.95\textwidth]{lion.png} \\ [2cm]
+
+\textsc{\Large The Annals of the UK-\TeX\ Users' Group} \\[0.2cm]
+{\large \href{http://uk.tug.org/}{uk.tug.org}} \\[0.2cm]
+{\large ISSN 1354-5930}
+
+\vfill
+
+% Bottom of the page
+{\large
+\begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}} l c r }
+            & Edited by                 &             \\
+Vol. \ISSUE & Jonathan \textsc{Webley}  & \ISSUEDATE  \\
+\end{tabular*}}
+
+\end{center}
+
+\end{titlepage}
+
+% -----------------------------------------------------------------------------------
+\setcounter{tocdepth}{2}  % 2 = sub-sections
+\tableofcontents
+
+% ----------------------------------------------------------------------------------------
+\vspace{0.5cm}
+\noindent \textbf{\ukt\ Committee 2009}
+
+\begin{itemize}
+   \setlength{\parskip}{1pt} % Scrunch up to fit on first column
+   \item Jonathan Fine (Chair)
+   \item David Crossland (Secretary)
+   \item David Saunders (Treasurer)
+   \item Joseph Wright (Membership Secretary and Webmaster)
+   \item John Trapp (Training Officer)
+   \item Jonathan Underwood
+   \item Charles Goldie
+   \item Simon Dales
+   \item Jonathan Webley (Baskerville Editor)
+\end{itemize}
+The  committee can be contacted at:
+\begin{center}
+\href{mailto:uktug-committee@uk.tug.org}{uktug-committee@uk.tug.org}
+\end{center}
+
+% ----------------------------------------------------------------------------------------
+\section{Editorial}
+Welcome to my second edition of \BV. I have been working on this edition, on and off, for months with various interruptions. It's been hard work and I've learnt a lot, but, finally, I've managed to pull everything together, and now we're up to twelve pages. I'm mentally planning the next edition for early next year, though that does depend on my availability and the quality and quantity of contributions.
+
+%Unfortunately I will miss the AGM but wish it good luck nonetheless.
+
+\hfill Jonathan Webley
+
+\hfill \ \href{mailto:baskerville@uk.tug.org}{baskerville@uk.tug.org}
+
+% ----------------------------------------------------------------------------------------
+\section{Events}
+
+% ----------------------------------------------------------------------------------------
+\subsection{TUG 2010}
+
+% 0.12 / 0.85
+
+\begin{wrapfigure}{R}{0.2\textwidth}
+    \vspace{-20pt} % Remove space at top of logo
+    % [width=1.0\textwidth]
+    \includegraphics{tug_bw.jpg}
+    \vspace{-10pt} % Remove space at boTtom of logo
+\end{wrapfigure}
+
+
+% Lots more material available on 2 emails or from website
+
+TUG 2010 will be held in San Francisco, California, USA, from
+  June 28--30, 2010, in the Sir Francis Drake Hotel in San Francisco.
+
+Don Knuth and other members of the original Stanford \TeX\ Project will be there.  There will be several special events, including the conference banquet, to honour their work and celebrate \TeX's 32nd anniversary.
+
+Abstracts and presentation proposals are welcome at any time, and hotel reservations are available. The registration form will be posted soon.
+
+The official website is:
+\begin{center}
+ \href{http://tug.org/tug2010/}{tug.org/tug2010}
+\end{center}
+
+
+% ----------------------------------------------------------------------------------------
+\section{News}
+\subsection{The \TeX\ FAQ}
+\emph{The UK List of \TeX\ Frequently Asked Questions on the Web} was updated in June this year and now contains 438 questions (and answers). The FAQ is maintained by Robin Fairbairns and is for English-speaking users of \TeX. The questions cover a wide range of topics, but the actual typesetting issues are mostly covered from the viewpoint of a \LaTeX\ user. 
+
+The FAQ can be found at:
+\begin{center}
+\href{http://www.tex.ac.uk/faq}{www.tex.ac.uk/faq}
+\end{center}
+
+Any errors, corrections and potential new topics should be sent to:
+\begin{center}
+\href{mailto:faq-devel@tex.ac.uk}{faq-devel@tex.ac.uk}
+\end{center}
+
+
+% ----------------------------------------------------------------------------------------
+\subsection{MathTran}
+
+MathTran is a website that can be used to create, store and translate mathematical content. It translates mathematics entered using \TeX\ notation into images for inclusion in web pages and on emails. The latest version now allows users with an account to save their formulas.
+
+MathTran is funded by the OU and JISC. The website can be found at:
+\begin{center}
+\href{http://www.mathtran.org/}{www.mathtran.org}
+\end{center}
+
+
+% ----------------------------------------------------------------------------------------
+% \newpage
+\section{The Hound}
+
+\AUTHOR{Jonathan Webley}
+
+% \vspace{3ex}
+
+\begin{Puzzle}{11}{11}
+|[1]C |E |R |I |[2]S |E |* |[3]A |[4]S |K |[5]S |.
+|A |* |* |* |O |* |* |* |N |* |U |.
+|[6]S |A |[7]C |* |[8]A |S |[9]S |U |A |G |E |.
+|K |* |E |* |P |* |U |* |K |* |D |.
+|[10]S |H |A |K |O |* |[11]P |I |E |C |E |.
+|* |* |S |* |[12]P |I |E |* |P |* |* |.
+|[13]S |T |E |L |E |* |[14]R |A |I |N |[15]Y |.
+|H |* |F |* |R |* |H |* |T |* |O |.
+|[16]A |N |I |M |A |T |E |* |[17]S |O |U |.
+|G |* |R |* |* |* |R |* |* |* |T |.
+|[18]S |M |E |W |* |[19]P |O |T |A |S |H |.
+\end{Puzzle}
+
+\noindent \textbf{Across} \\[2ex]
+{\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r p{6.7cm}}
+ \textbf{1} & Inside the saucer, I see, is cherry-coloured. (6) \\
+ \textbf{3} & Requests are listed in the task sheet. (4) \\
+ \textbf{6} & I bought a bag in the Trossachs. (3) \\
+ \textbf{8} & Sadly, use a gas mask to relieve pain. (7) \\
+ \textbf{10} & Large hat, squashed, has okay from me. (5) \\
+ \textbf{11} & Species, drowning without a ship, have no part. (5) \\
+ \textbf{12} & This type of chart sounds like 3.14159 \dots (3) \\
+ \textbf{13} & There's an obelisk of steel, rusted. (5) \\
+ \textbf{14} & Lost in Iran, unknown at the end, wet. (5) \\
+ \textbf{16} & Quicken the best, but meant badly. (7) \\
+ \textbf{17} & So you want a coin? (3) \\
+ \textbf{18} & Duck mews annoyingly. (4) \\
+ \textbf{19} & Ah, the post was mislaid because it contains potassium. (6) \\
+\end{tabular}}
+
+\noindent \textbf{Down} \\[2ex]
+{
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r p{6.7cm}}
+ \textbf{1} & Kegs for 100 demands. (5) \\
+ \textbf{2} & Sapper, with a double-O rating, watches a show. (4,5) \\
+ \textbf{4} & A skin pest disfigures in dangerous places. (5,4) \\
+ \textbf{5} & European sounds like leather. (5) \\
+ %\end{tabular}
+ %\begin{tabular}{r p{6.7cm}}
+ \textbf{7} & You! Extinguish the flames and stop fighting. (9) \\
+ \textbf{9} & Robin is found washed up on pure shore. (9) \\
+ \textbf{13} & Cormorants burp gas. Sh! (5) \\
+ \textbf{15} & Why art thou so young? (5) \\
+\end{tabular}}
+
+% ----------------------------------------------------------------------------------------
+
+\input{siunitx}
+\input{ChemTeX}
+\input{greek}
+
+% ----------------------------------------------------------------------------------------
+\section{The Hound Answers}
+
+\noindent \textbf{Across} \\
+\begin{turn}{180} 
+ 16. animate,
+ 17. sou,
+ 18. smew,
+ 19. potash
+\end{turn} \\
+\begin{turn}{180}
+ 10. shako,
+ 12. pie,
+ 13. stele,
+ 14. rainy,
+ \end{turn} \\
+\begin{turn}{180}
+ 1. cerise,
+ 3. asks,
+ 6. sac,
+ 8. assuage,
+ 11. piece,
+\end{turn} \\
+
+\noindent \textbf{Down} \\
+\begin{turn}{180}
+15. youth
+\end{turn} \\
+\begin{turn}{180}
+5. suede,
+7. ceasefire,
+9. superhero,
+13. shags,
+\end{turn} \\
+\begin{turn}{180}
+1. casks,
+2. soap opera,
+4. snake pits,
+\end{turn}
+
+% -----------------------------------------------------------------------------------
+\section{Contributions}
+\noindent All contributions to \BV\ should be sent to the editor at:
+\begin{center}
+\href{mailto:baskerville@uk.tug.org}{baskerville@uk.tug.org}
+\end{center}
+
+Articles on any area of \TeX\ or its friends, \ukt\ or related topics are very welcome. The Committee is particularly keen to publish articles with a UK \textit{flavour}. Send in your comments on this issue; your suggestions, letters, thoughts, tips and hints, articles, jokes, questions, requests for help, jobs, cartoons or puzzles -- anything relevant will be considered for publication.
+
+%The deadline for the next issue is [\textbf{DATE}]. 
+
+\end{document}
+
